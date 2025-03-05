@@ -1,44 +1,47 @@
 {% extends "base.html" %}
-{% block title %}Fulfill Orders{% endblock %}
+{% block title %}Fulfill Production Orders{% endblock %}
 {% block content %}
     <h1>Fulfill Production Orders</h1>
     <form method="POST">
         {{ form.hidden_tag() }}
         <div class="form-group">
-            {{ form.order_id.label }}
-            {{ form.order_id(class="form-control") }}
+            {{ form.order_id.label }} {{ form.order_id(class="form-control") }}
         </div>
         {{ form.submit(class="btn") }}
     </form>
     <h2>Pending Orders</h2>
-    <table class="excel-table">
-        <thead>
-            <tr>
-                <th>Order ID</th>
-                <th>Product</th>
-                <th>Quantity</th>
-                <th>Batch</th>
-                <th>Rush</th>
-                <th>Submitted</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for order in orders %}
+    {% if orders %}
+        <table class="excel-table">
+            <thead>
                 <tr>
-                    <td>{{ order.order_id }}</td>
-                    <td>{{ order.product.product_name }} ({{ order.product_id }})</td>
-                    <td>{{ order.quantity_to_produce }}</td>
-                    <td>{{ order.production_batch }}</td>
-                    <td>{{ 'Yes' if order.is_rush else 'No' }}</td>
-                    <td>{{ order.date_submitted }}</td>
+                    <th>Order ID</th>
+                    <th>Product</th>
+                    <th>Quantity</th>
+                    <th>Batch</th>
+                    <th>Rush</th>
+                    <th>Submitted</th>
                 </tr>
-            {% endfor %}
-        </tbody>
-    </table>
-    <h2>Steps to Fulfill</h2>
-    <ul>
+            </thead>
+            <tbody>
+                {% for order in orders %}
+                    <tr {% if order.is_rush %}class="expiring"{% endif %}>
+                        <td><a href="{{ url_for('main.order_detail', order_id=order.order_id) }}">{{ order.order_id }}</a></td>
+                        <td>{{ order.product_ref.product_name }} ({{ order.product_id }})</td>
+                        <td>{{ order.quantity_to_produce }}</td>
+                        <td>{{ order.production_batch }}</td>
+                        <td>{{ 'Yes' if order.is_rush else 'No' }}</td>
+                        <td>{{ order.date_submitted }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        <p>No pending orders to fulfill.</p>
+    {% endif %}
+    <h2>Fulfillment Steps</h2>
+    <ol>
         {% for step in steps %}
             <li>{{ step }}</li>
         {% endfor %}
-    </ul>
+    </ol>
 {% endblock %}
