@@ -1,33 +1,5 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>CNP Inventory Management</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-</head>
-<body>
-    <div class="navbar">
-        <a href="{{ url_for('main.home') }}">Home</a>
-        <a href="{{ url_for('main.sync') }}">Sync</a>
-        <a href="{{ url_for('main.inventory') }}">Inventory</a>
-        <a href="{{ url_for('main.receive') }}">Receive</a>
-        <a href="{{ url_for('main.produce') }}">Produce</a>
-        <a href="{{ url_for('main.fulfill') }}">Fulfill</a>
-        <a href="{{ url_for('main.adjust') }}">Adjust</a>
-        <a href="{{ url_for('main.sales') }}">Sales</a>
-        <a href="{{ url_for('main.manual_sale') }}">Manual Sale</a>
-        <a href="{{ url_for('main.history') }}">History</a>
-    </div>
-    <div class="container">
-        <h1>Welcome to CNP Inventory Management</h1>
-        <div class="nav-links">
-            <p><a href="/sync">Sync Shopify Sales</a></p>
-            <p><a href="/inventory">View Inventory Report</a></p>
-            <p><a href="/receive">Receive Inventory</a></p>
-            <p><a href="/produce">Start Production</a></p>
-            <p><a href="/adjust">Adjust Inventory</a></p>
-            <p><a href="/sales">Sales Dashboard</a></p>
-            <p><a href="/manual-sale">Record Manual Sale</a></p>
-        </div>
-    </div>
-</body>
-</html>
+{% extends "base.html" %}
+{% block title %}Home{% endblock %}
+{% block content %}
+    <h1>Welcome to CNP Sync</h1>
+{% endblock %}

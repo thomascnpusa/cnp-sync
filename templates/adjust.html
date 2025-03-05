@@ -1,40 +1,21 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Adjust Inventory</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-</head>
-<body>
-    <div class="navbar">
-        <a href="{{ url_for('main.home') }}">Home</a>
-        <a href="{{ url_for('main.sync') }}">Sync</a>
-        <a href="{{ url_for('main.inventory') }}">Inventory</a>
-        <a href="{{ url_for('main.receive') }}">Receive</a>
-        <a href="{{ url_for('main.produce') }}">Produce</a>
-        <a href="{{ url_for('main.fulfill') }}">Fulfill</a>
-        <a href="{{ url_for('main.adjust') }}">Adjust</a>
-        <a href="{{ url_for('main.sales') }}">Sales</a>
-        <a href="{{ url_for('main.manual_sale') }}">Manual Sale</a>
-        <a href="{{ url_for('main.history') }}">History</a>
-    </div>
-    <div class="container">
-        <h1>Adjust Inventory</h1>
-        <form method="POST">
-            {{ form.hidden_tag() }}
-            <div>{{ form.product.label }} {{ form.product }}</div>
-            <div>{{ form.quantity.label }} {{ form.quantity }}</div>
-            <div>{{ form.reason.label }} {{ form.reason }}</div>
-            {{ form.submit(class="btn") }}
-        </form>
-        {% with messages = get_flashed_messages() %}
-            {% if messages %}
-                <ul>
-                    {% for message in messages %}
-                        <li>{{ message }}</li>
-                    {% endfor %}
-                </ul>
-            {% endif %}
-        {% endwith %}
-    </div>
-</body>
-</html>
+{% extends "base.html" %}
+{% block title %}Adjust Inventory{% endblock %}
+{% block content %}
+    <h1>Adjust Inventory</h1>
+    <form method="POST">
+        {{ form.hidden_tag() }}
+        <div class="form-group">
+            {{ form.product.label }}
+            {{ form.product(class="form-control") }}
+        </div>
+        <div class="form-group">
+            {{ form.quantity.label }}
+            {{ form.quantity(class="form-control") }}
+        </div>
+        <div class="form-group">
+            {{ form.reason.label }}
+            {{ form.reason(class="form-control") }}
+        </div>
+        {{ form.submit(class="btn") }}
+    </form>
+{% endblock %}

@@ -1,79 +1,39 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Production Order History</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-    <style>
-        .excel-table { width: 100%; border-collapse: collapse; margin-bottom: 20px; }
-        .excel-table th, .excel-table td { border: 1px solid #ddd; padding: 8px; text-align: left; }
-        .excel-table th { background: #ecf0f1; }
-        .filter-form { margin-bottom: 20px; }
-        .btn { padding: 5px 10px; }
-    </style>
-</head>
-<body>
-    <div class="navbar">
-        <a href="{{ url_for('main.home') }}">Home</a>
-        <a href="{{ url_for('main.sync') }}">Sync</a>
-        <a href="{{ url_for('main.inventory') }}">Inventory</a>
-        <a href="{{ url_for('main.receive') }}">Receive</a>
-        <a href="{{ url_for('main.produce') }}">Produce</a>
-        <a href="{{ url_for('main.fulfill') }}">Fulfill</a>
-        <a href="{{ url_for('main.adjust') }}">Adjust</a>
-        <a href="{{ url_for('main.sales') }}">Sales</a>
-        <a href="{{ url_for('main.manual_sale') }}">Manual Sale</a>
-        <a href="{{ url_for('main.history') }}">History</a>
-    </div>
-    <div class="container">
-        <h1>Production Order History</h1>
-        <form method="GET" class="filter-form">
-            <label>Status: </label>
-            <select name="status">
-                <option value="All" {% if status_filter == 'All' %}selected{% endif %}>All</option>
-                <option value="Pending" {% if status_filter == 'Pending' %}selected{% endif %}>Pending</option>
-                <option value="Fulfilled" {% if status_filter == 'Fulfilled' %}selected{% endif %}>Fulfilled</option>
-            </select>
-            <label>Product ID: </label>
-            <input type="text" name="product" value="{{ product_filter }}">
-            <label>Batch: </label>
-            <input type="text" name="batch" value="{{ batch_filter }}">
-            <button type="submit" class="btn">Filter</button>
-            <a href="{{ url_for('main.history', status=status_filter, product=product_filter, batch=batch_filter, export='true') }}" class="btn">Export CSV</a>
-        </form>
-        {% if orders %}
-            <table class="excel-table">
-                <thead>
-                    <tr>
-                        <th>Order ID</th>
-                        <th>Batch</th>
-                        <th>Product</th>
-                        <th>Quantity</th>
-                        <th>Status</th>
-                        <th>Submitted</th>
-                        <th>Fulfilled</th>
-                        <th>Notes</th>
-                        <th>Operator</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {% for order in orders %}
-                        <tr>
-                            <td><a href="{{ url_for('main.order_detail', order_id=order.order_id) }}">{{ order.order_id }}</a></td>
-                            <td>{{ order.production_batch }}</td>
-                            <td>{{ order.product.product_name }} ({{ order.product_id }})</td>
-                            <td>{{ order.quantity_to_produce }} {{ order.product.default_unit_of_measure }}</td>
-                            <td>{{ order.status }}</td>
-                            <td>{{ order.date_submitted }}</td>
-                            <td>{{ order.date_fulfilled or 'N/A' }}</td>
-                            <td>{{ order.notes or 'N/A' }}</td>
-                            <td>{{ order.operator.username if order.operator else 'N/A' }}</td>
-                        </tr>
-                    {% endfor %}
-                </tbody>
-            </table>
-        {% else %}
-            <p>No production orders found.</p>
-        {% endif %}
-    </div>
-</body>
-</html>
+{% extends "base.html" %}
+{% block title %}Order History{% endblock %}
+{% block content %}
+    <h1>Production Order History</h1>
+    <form method="GET" class="filter-form">
+        <input type="text" name="product" value="{{ product_filter }}" placeholder="Filter by Product ID">
+        <input type="text" name="batch" value="{{ batch_filter }}" placeholder="Filter by Batch">
+        <select name="status">
+            <option value="All" {% if status_filter == 'All' %}selected{% endif %}>All Statuses</option>
+            <option value="Pending" {% if status_filter == 'Pending' %}selected{% endif %}>Pending</option>
+            <option value="Fulfilled" {% if status_filter == 'Fulfilled' %}selected{% endif %}>Fulfilled</option>
+        </select>
+        <button type="submit" class="btn">Filter</button>
+    </form>
+    <table class="excel-table">
+        <thead>
+            <tr>
+                <th>Order ID</th>
+                <th>Product</th>
+                <th>Quantity</th>
+                <th>Batch</th>
+                <th>Status</th>
+                <th>Submitted</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for order in orders %}
+                <tr>
+                    <td><a href="{{ url_for('main.order_detail', order_id=order.order_id) }}">{{ order.order_id }}</a></td>
+                    <td>{{ order.product_id }}</td>
+                    <td>{{ order.quantity_to_produce }}</td>
+                    <td>{{ order.production_batch }}</td>
+                    <td>{{ order.status }}</td>
+                    <td>{{ order.date_submitted }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

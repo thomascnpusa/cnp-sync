@@ -1,180 +1,83 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Order {{ order.order_id }} Details</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-    <style>
-        .excel-table { width: 100%; border-collapse: collapse; margin-bottom: 20px; }
-        .excel-table th, .excel-table td { border: 1px solid #ddd; padding: 8px; text-align: left; }
-        .excel-table th { background: #ecf0f1; }
-        .btn { padding: 5px 10px; }
-        .form-group { margin-bottom: 15px; }
-        .form-control { width: 100%; padding: 5px; }
-    </style>
-</head>
-<body>
-    <div class="navbar">
-        <a href="{{ url_for('main.home') }}">Home</a>
-        <a href="{{ url_for('main.sync') }}">Sync</a>
-        <a href="{{ url_for('main.inventory') }}">Inventory</a>
-        <a href="{{ url_for('main.receive') }}">Receive</a>
-        <a href="{{ url_for('main.produce') }}">Produce</a>
-        <a href="{{ url_for('main.fulfill') }}">Fulfill</a>
-        <a href="{{ url_for('main.adjust') }}">Adjust</a>
-        <a href="{{ url_for('main.sales') }}">Sales</a>
-        <a href="{{ url_for('main.manual_sale') }}">Manual Sale</a>
-        <a href="{{ url_for('main.history') }}">History</a>
-    </div>
-    <div class="container">
-        <h1>Production Order {{ order.order_id }} - {{ order.product.product_name }}</h1>
-        <h2>Order Details</h2>
-        <p><strong>Production Batch:</strong> {{ order.production_batch }}</p>
-        <p><strong>Product:</strong> {{ order.product.product_name }} ({{ order.product_id }})</p>
-        <p><strong>Quantity Produced:</strong> {{ order.quantity_to_produce }} {{ order.product.default_unit_of_measure }}</p>
-        <p><strong>Status:</strong> {{ order.status }}</p>
-        <p><strong>Date Submitted:</strong> {{ order.date_submitted }}</p>
-        <p><strong>Date Fulfilled:</strong> {{ order.date_fulfilled or 'N/A' }}</p>
-        <p><strong>Location:</strong> Woods Cross</p>
-        <p><strong>Operator:</strong> {{ order.operator.username if order.operator else 'N/A' }}</p>
-        <p><strong>QA Sign-Off:</strong> {{ order.qa_signoff or 'Not Signed Off' }}</p>
-        {% if order.status == 'Fulfilled' and not order.qa_signoff %}
-            <form method="POST">
-                <button type="submit" name="qa_signoff" class="btn">Sign Off as QA</button>
-            </form>
-        {% endif %}
-        {% if order.status == 'Pending' %}
-            <h3>Edit Order</h3>
-            <form method="POST">
-                {{ form.hidden_tag() }}
-                <div class="form-group">
-                    <label>{{ form.quantity.label }}</label>
-                    {{ form.quantity(class="form-control") }}
-                </div>
-                <div class="form-group">
-                    <label>{{ form.notes.label }}</label>
-                    {{ form.notes(class="form-control", rows="3") }}
-                </div>
-                {{ form.submit(class="btn", value="Update Order") }}
-            </form>
-        {% endif %}
-        {% if order.notes and order.status != 'Pending' %}
-            <h3>Order Notes</h3>
-            <p>{{ order.notes }}</p>
-        {% endif %}
-
-        <h2>Bill of Materials</h2>
-        {% if bom_items %}
-            <table class="excel-table">
-                <thead>
-                    <tr>
-                        <th>Component ID</th>
-                        <th>Name</th>
-                        <th>Qty per Unit</th>
-                        <th>Total Required</th>
-                        <th>Batch Used</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {% for item in bom_items %}
-                        <tr>
-                            <td>{{ item.component_product_id }}</td>
-                            <td>{{ item.product_component.product_name }}</td>
-                            <td>{{ item.quantity }} {{ item.product_component.default_unit_of_measure }}</td>
-                            <td>{{ (item.quantity * order.quantity_to_produce)|round(2) }} {{ item.product_component.default_unit_of_measure }}</td>
-                            <td>{{ component_inventories|selectattr('product_id', 'equalto', item.component_product_id)|map(attribute='batch_number')|first or 'N/A' }}</td>
-                        </tr>
-                    {% endfor %}
-                </tbody>
-            </table>
-        {% else %}
-            <p>No BOM items defined.</p>
-        {% endif %}
-
-        <h2>Inventory Impact</h2>
-        <h3>Components</h3>
-        <table class="excel-table">
-            <thead>
+{% extends "base.html" %}
+{% block title %}Order Detail - {{ order.order_id }}{% endblock %}
+{% block content %}
+    <h1>Order Detail: {{ order.order_id }}</h1>
+    <p>Product: {{ order.product_id }}</p>
+    <form method="POST">
+        {{ form.hidden_tag() }}
+        <div class="form-group">
+            {{ form.quantity.label }}
+            {{ form.quantity(class="form-control") }}
+        </div>
+        <div class="form-group">
+            {{ form.notes.label }}
+            {{ form.notes(class="form-control", rows="3") }}
+        </div>
+        {{ form.submit(class="btn") }}
+    </form>
+    <h2>Components Used</h2>
+    <table class="excel-table">
+        <thead>
+            <tr>
+                <th>Component ID</th>
+                <th>Name</th>
+                <th>Batch Number</th>
+                <th>Qty Before</th>
+                <th>Qty Used</th>
+                <th>Qty Remaining</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for inv in component_inventories %}
                 <tr>
-                    <th>Component ID</th>
-                    <th>Name</th>
-                    <th>Before Qty</th>
-                    <th>Used Qty</th>
-                    <th>Current Qty</th>
-                    <th>Batch</th>
+                    <td>{{ inv.product_id }}</td>
+                    <td>{{ inv.name }}</td>
+                    <td>{{ inv.batch_number }}</td>
+                    <td>{{ inv.before_quantity }}</td>
+                    <td>{{ inv.used_quantity }}</td>
+                    <td>{{ inv.current_quantity }}</td>
                 </tr>
-            </thead>
-            <tbody>
-                {% for inv in component_inventories %}
-                    <tr>
-                        <td>{{ inv.product_id }}</td>
-                        <td>{{ inv.name }}</td>
-                        <td>{{ inv.before_quantity }} {{ order.product.default_unit_of_measure }}</td>
-                        <td>{{ inv.used_quantity }} {{ order.product.default_unit_of_measure }}</td>
-                        <td>{{ inv.current_quantity }} {{ order.product.default_unit_of_measure }}</td>
-                        <td>{{ inv.batch_number or 'N/A' }}</td>
-                    </tr>
-                {% endfor %}
-            </tbody>
-        </table>
-        <h3>Finished Product</h3>
-        <table class="excel-table">
-            <thead>
+            {% endfor %}
+        </tbody>
+    </table>
+    <h2>Finished Goods</h2>
+    <table class="excel-table">
+        <thead>
+            <tr>
+                <th>Location</th>
+                <th>Qty Before</th>
+                <th>Qty Added</th>
+                <th>Qty Now</th>
+                <th>Batch</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>{{ finished_inventory.location if finished_inventory else 'Woods Cross' }}</td>
+                <td>{{ finished_before }}</td>
+                <td>{{ order.quantity_to_produce }}</td>
+                <td>{{ finished_inventory.quantity if finished_inventory else order.quantity_to_produce }}</td>
+                <td>{{ order.production_batch }}</td>
+            </tr>
+        </tbody>
+    </table>
+    <h2>Audit Log</h2>
+    <table class="excel-table">
+        <thead>
+            <tr>
+                <th>Timestamp</th>
+                <th>Action</th>
+                <th>Details</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for log in audit_logs %}
                 <tr>
-                    <th>Product ID</th>
-                    <th>Name</th>
-                    <th>Before Qty</th>
-                    <th>Added Qty</th>
-                    <th>Current Qty</th>
-                    <th>Batch</th>
+                    <td>{{ log.timestamp }}</td>
+                    <td>{{ log.action }}</td>
+                    <td>{{ log.details }}</td>
                 </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>{{ order.product_id }}</td>
-                    <td>{{ order.product.product_name }}</td>
-                    <td>{{ finished_before }} {{ order.product.default_unit_of_measure }}</td>
-                    <td>{{ order.quantity_to_produce }} {{ order.product.default_unit_of_measure }}</td>
-                    <td>{{ finished_inventory.quantity if finished_inventory else 0 }} {{ order.product.default_unit_of_measure }}</td>
-                    <td>{{ finished_inventory.batch_number if finished_inventory else order.production_batch }}</td>
-                </tr>
-            </tbody>
-        </table>
-
-        <h2>Audit Log</h2>
-        {% if audit_logs %}
-            <table class="excel-table">
-                <thead>
-                    <tr>
-                        <th>Timestamp</th>
-                        <th>Action</th>
-                        <th>User</th>
-                        <th>Details</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {% for log in audit_logs %}
-                        <tr>
-                            <td>{{ log.timestamp }}</td>
-                            <td>{{ log.action }}</td>
-                            <td>{{ log.user.username if log.user else 'N/A' }}</td>
-                            <td>{{ log.details or 'N/A' }}</td>
-                        </tr>
-                    {% endfor %}
-                </tbody>
-            </table>
-        {% else %}
-            <p>No audit logs available.</p>
-        {% endif %}
-
-        {% with messages = get_flashed_messages(with_categories=true) %}
-            {% if messages %}
-                <ul class="flashes">
-                    {% for category, message in messages %}
-                        <li class="{{ category }}">{{ message }}</li>
-                    {% endfor %}
-                </ul>
-            {% endif %}
-        {% endwith %}
-    </div>
-</body>
-</html>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

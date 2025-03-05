@@ -1,61 +1,41 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Sales Dashboard</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-</head>
-<body>
-    <div class="navbar">
-        <a href="{{ url_for('main.home') }}">Home</a>
-        <a href="{{ url_for('main.sync') }}">Sync</a>
-        <a href="{{ url_for('main.inventory') }}">Inventory</a>
-        <a href="{{ url_for('main.receive') }}">Receive</a>
-        <a href="{{ url_for('main.produce') }}">Produce</a>
-        <a href="{{ url_for('main.fulfill') }}">Fulfill</a>
-        <a href="{{ url_for('main.adjust') }}">Adjust</a>
-        <a href="{{ url_for('main.sales') }}">Sales</a>
-        <a href="{{ url_for('main.manual_sale') }}">Manual Sale</a>
-        <a href="{{ url_for('main.history') }}">History</a>
-    </div>
-    <div class="container">
-        <h1>Sales Dashboard</h1>
-        <h2>Sales by Product</h2>
-        <table>
-            <thead>
+{% extends "base.html" %}
+{% block title %}Sales{% endblock %}
+{% block content %}
+    <h1>Sales Dashboard</h1>
+    <h2>Sales by Product</h2>
+    <table class="excel-table">
+        <thead>
+            <tr>
+                <th>Product ID</th>
+                <th>Name</th>
+                <th>Total Sold</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for product_id, product_name, total_sold in sales_by_product %}
                 <tr>
-                    <th>Product ID</th>
-                    <th>Product Name</th>
-                    <th>Total Sold</th>
+                    <td>{{ product_id }}</td>
+                    <td>{{ product_name }}</td>
+                    <td>{{ total_sold }}</td>
                 </tr>
-            </thead>
-            <tbody>
-                {% for sale in sales_by_product %}
-                    <tr>
-                        <td>{{ sale.product_id }}</td>
-                        <td>{{ sale.product_name }}</td>
-                        <td>{{ sale.total_sold }}</td>
-                    </tr>
-                {% endfor %}
-            </tbody>
-        </table>
-
-        <h2>Sales by Channel</h2>
-        <table>
-            <thead>
+            {% endfor %}
+        </tbody>
+    </table>
+    <h2>Sales by Channel</h2>
+    <table class="excel-table">
+        <thead>
+            <tr>
+                <th>Channel</th>
+                <th>Total Sold</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for channel, total_sold in sales_by_channel %}
                 <tr>
-                    <th>Channel</th>
-                    <th>Total Sold</th>
+                    <td>{{ channel }}</td>
+                    <td>{{ total_sold }}</td>
                 </tr>
-            </thead>
-            <tbody>
-                {% for sale in sales_by_channel %}
-                    <tr>
-                        <td>{{ sale.channel }}</td>
-                        <td>{{ sale.total_sold }}</td>
-                    </tr>
-                {% endfor %}
-            </tbody>
-        </table>
-    </div>
-</body>
-</html>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
