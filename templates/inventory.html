@@ -1,28 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Inventory</title>
+    <title>Inventory Management</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-    <style>
-        .excel-table { width: 100%; border-collapse: collapse; margin-bottom: 20px; font-size: 0.9em; }
-        .excel-table th, .excel-table td { border: 1px solid #e0e0e0; padding: 6px; text-align: left; }
-        .excel-table th { background: #f5f7fa; font-weight: bold; }
-        .excel-table th a { text-decoration: none; color: #333; }
-        .excel-table tr:hover { background: #f9f9f9; }
-        .excel-table a { color: #007bff; text-decoration: none; }
-        .excel-table a:hover { text-decoration: underline; }
-        .low-stock { background-color: #ffe6e6; }
-        .expiring { background-color: #fff3e6; }
-        .filter-form { margin-bottom: 20px; display: flex; gap: 10px; align-items: center; }
-        .filter-form input, .filter-form select { padding: 5px; border: 1px solid #ccc; border-radius: 4px; }
-        .btn { padding: 5px 10px; background: #007bff; color: white; border: none; border-radius: 4px; cursor: pointer; }
-        .btn:hover { background: #0056b3; }
-        .pagination { margin-top: 20px; display: flex; gap: 10px; align-items: center; }
-        .batch-details { font-size: 0.85em; color: #666; margin-top: 4px; display: none; }
-        .batch-toggle { cursor: pointer; color: #007bff; font-size: 0.9em; }
-        .batch-toggle:hover { text-decoration: underline; }
-        .adjust-link { font-size: 0.85em; margin-left: 5px; }
-    </style>
     <script>
         function toggleBatchDetails(id) {
             var details = document.getElementById('batch-' + id);
@@ -41,16 +21,16 @@
         <a href="/inventory">Inventory</a>
         <a href="/receive">Receive</a>
         <a href="/produce">Produce</a>
-        <a href="/fulfill">Fulfill Orders</a>
+        <a href="/fulfill">Fulfill</a>
         <a href="/adjust">Adjust</a>
         <a href="/sales">Sales</a>
         <a href="/manual-sale">Manual Sale</a>
-        <a href="/history">Order History</a>
+        <a href="/history">History</a>
     </div>
     <div class="container">
         <h1>Inventory Report (Last {{ lookback_days }} Days)</h1>
         <form method="GET" class="filter-form">
-            <input type="text" name="search" value="{{ search_query }}" placeholder="Search by ID, Name, or Batch" class="form-control">
+            <input type="text" name="search" value="{{ search_query }}" placeholder="Search by ID, Name, or Batch">
             <select name="sellable">
                 <option value="all" {% if sellable_filter == 'all' %}selected{% endif %}>All Items</option>
                 <option value="sellable" {% if sellable_filter == 'sellable' %}selected{% endif %}>Sellable</option>
@@ -94,7 +74,15 @@
                         </td>
                         <td>{{ item.expiry_date or 'N/A' }}</td>
                         <td>{{ 'Yes' if item.product.sellable else 'No' }}</td>
-                        <td><a href="{{ url_for('main.adjust', product_id=item.product_id) }}" class="adjust-link">Adjust</a></td>
+                        <td>
+                            <form method="POST" class="adjust-form">
+                                <input type="hidden" name="inventory_id" value="{{ item.inventory_id }}">
+                                <input type="number" name="adjust_quantity" class="adjust-input" step="any" placeholder="Qty" required>
+                                <input type="text" name="reason" class="adjust-input" placeholder="Reason" style="width: 100px;">
+                                <button type="submit" class="btn">Adjust</button>
+                            </form>
+                            <a href="{{ url_for('main.adjust', product_id=item.product_id) }}" class="adjust-link">Full Adjust</a>
+                        </td>
                     </tr>
                 {% endfor %}
             </tbody>
@@ -116,6 +104,15 @@
                 {% endfor %}
             </ul>
         {% endif %}
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                <ul class="flashes">
+                    {% for category, message in messages %}
+                        <li class="{{ category }}">{{ message }}</li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        {% endwith %}
     </div>
 </body>
 </html>
