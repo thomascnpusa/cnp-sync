@@ -1,0 +1,100 @@
+{% extends "base.html" %}
+{% block title %}Dashboard{% endblock %}
+{% block content %}
+    <h1>Dashboard</h1>
+    <div class="dashboard-section">
+        <h2>Low Stock Alerts</h2>
+        {% if low_stock %}
+            <table class="excel-table">
+                <thead>
+                    <tr>
+                        <th>Product ID</th>
+                        <th>Name</th>
+                        <th>Location</th>
+                        <th>Quantity</th>
+                        <th>Minimum</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for item in low_stock %}
+                        <tr class="low-stock">
+                            <td><a href="{{ url_for('main.product_detail', product_id=item.product_id) }}">{{ item.product_id }}</a></td>
+                            <td>{{ item.product_ref.product_name }}</td>
+                            <td>{{ item.location }}</td>
+                            <td>{{ item.quantity }}</td>
+                            <td>{{ item.minimum_quantity }}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        {% else %}
+            <p>No items below minimum stock.</p>
+        {% endif %}
+    </div>
+    <div class="dashboard-section">
+        <h2>Pending Production Orders</h2>
+        {% if pending_orders %}
+            <table class="excel-table">
+                <thead>
+                    <tr>
+                        <th>Order ID</th>
+                        <th>Product</th>
+                        <th>Quantity</th>
+                        <th>Batch</th>
+                        <th>Rush</th>
+                        <th>Submitted</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for order in pending_orders %}
+                        <tr {% if order.is_rush %}class="expiring"{% endif %}>
+                            <td><a href="{{ url_for('main.order_detail', order_id=order.order_id) }}">{{ order.order_id }}</a></td>
+                            <td>{{ order.product_ref.product_name }} ({{ order.product_id }})</td>
+                            <td>{{ order.quantity_to_produce }}</td>
+                            <td>{{ order.production_batch }}</td>
+                            <td>{{ 'Yes' if order.is_rush else 'No' }}</td>
+                            <td>{{ order.date_submitted }}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            <p><a href="{{ url_for('main.fulfill') }}">View All Pending Orders</a></p>
+        {% else %}
+            <p>No pending orders.</p>
+        {% endif %}
+    </div>
+    <div class="dashboard-section">
+        <h2>Recent Sales (Last 7 Days)</h2>
+        {% if recent_sales_by_product %}
+            <table class="excel-table">
+                <thead>
+                    <tr>
+                        <th>Product ID</th>
+                        <th>Name</th>
+                        <th>Total Sold</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for product_id, product_name, total_sold in recent_sales_by_product %}
+                        <tr>
+                            <td><a href="{{ url_for('main.product_detail', product_id=product_id) }}">{{ product_id }}</a></td>
+                            <td>{{ product_name }}</td>
+                            <td>{{ total_sold }}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            <p><a href="{{ url_for('main.sales') }}">View Full Sales Report</a></p>
+        {% else %}
+            <p>No sales in the last 7 days.</p>
+        {% endif %}
+    </div>
+    <div class="dashboard-section">
+        <h2>Quick Stats</h2>
+        <ul>
+            <li>Total Inventory Value: ${{ "%.2f" % total_inventory_value }}</li>
+            <li>Orders This Week: {{ orders_this_week }}</li>
+            <li>Sales This Month: {{ sales_this_month }} units</li>
+        </ul>
+    </div>
+{% endblock %}
