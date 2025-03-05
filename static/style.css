@@ -196,3 +196,22 @@ h1 {
     background: #fff7ed;
     color: #ea580c;
 }
+
+.dashboard-section {
+    margin-bottom: 30px;
+}
+
+.dashboard-section h2 {
+    color: #1f2937;
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
+.chart-container {
+    width: 100%;
+    margin: 20px 0;
+}
+canvas {
+    width: 100% !important;
+    height: auto !important;
+}

@@ -1,10 +1,72 @@
 {% extends "base.html" %}
 {% block title %}Dashboard{% endblock %}
+{% block head %}
+    <script src="{{ url_for('static', filename='chart.min.js') }}"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log("Chart object available:", typeof Chart !== 'undefined');
+            // Sales Chart
+            const salesCtx = document.getElementById('salesChart').getContext('2d');
+            new Chart(salesCtx, {
+                type: 'bar',
+                data: {
+                    labels: {{ sales_labels|tojson }},
+                    datasets: [{
+                        label: 'Units Sold (Last 7 Days)',
+                        data: {{ sales_data|tojson }},
+                        backgroundColor: 'rgba(75, 192, 192, 0.6)',
+                        borderColor: 'rgba(75, 192, 192, 1)',
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    scales: {
+                        y: { beginAtZero: true }
+                    }
+                }
+            });
+
+            // Low Stock Chart
+            const lowStockCtx = document.getElementById('lowStockChart').getContext('2d');
+            new Chart(lowStockCtx, {
+                type: 'bar',
+                data: {
+                    labels: {{ low_stock_data|map(attribute='name')|list|tojson }},
+                    datasets: [{
+                        label: 'Quantity Remaining',
+                        data: {{ low_stock_data|map(attribute='quantity')|list|tojson }},
+                        backgroundColor: 'rgba(255, 99, 132, 0.6)',
+                        borderColor: 'rgba(255, 99, 132, 1)',
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    scales: {
+                        y: { beginAtZero: true }
+                    }
+                }
+            });
+        });
+    </script>
+    <style>
+        .chart-container {
+            width: 100%;
+            margin: 20px 0;
+        }
+        canvas {
+            width: 100% !important;
+            height: auto !important;
+        }
+    </style>
+{% endblock %}
 {% block content %}
     <h1>Dashboard</h1>
     <div class="dashboard-section">
         <h2>Low Stock Alerts</h2>
         {% if low_stock %}
+            <div class="chart-container">
+                <canvas id="lowStockChart"></canvas>
+            </div>
             <table class="excel-table">
                 <thead>
                     <tr>
@@ -66,6 +128,9 @@
     <div class="dashboard-section">
         <h2>Recent Sales (Last 7 Days)</h2>
         {% if recent_sales_by_product %}
+            <div class="chart-container">
+                <canvas id="salesChart"></canvas>
+            </div>
             <table class="excel-table">
                 <thead>
                     <tr>
