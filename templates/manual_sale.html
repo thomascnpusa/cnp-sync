@@ -6,11 +6,16 @@
 </head>
 <body>
     <div class="navbar">
-        <a href="/">Home</a>
-        <a href="/sync">Sync</a>
-        <a href="/inventory">Inventory</a>
-        <a href="/receive">Receive</a>
-        <a href="/produce">Produce</a>
+        <a href="{{ url_for('main.home') }}">Home</a>
+        <a href="{{ url_for('main.sync') }}">Sync</a>
+        <a href="{{ url_for('main.inventory') }}">Inventory</a>
+        <a href="{{ url_for('main.receive') }}">Receive</a>
+        <a href="{{ url_for('main.produce') }}">Produce</a>
+        <a href="{{ url_for('main.fulfill') }}">Fulfill</a>
+        <a href="{{ url_for('main.adjust') }}">Adjust</a>
+        <a href="{{ url_for('main.sales') }}">Sales</a>
+        <a href="{{ url_for('main.manual_sale') }}">Manual Sale</a>
+        <a href="{{ url_for('main.history') }}">History</a>
     </div>
     <div class="container">
         <h1>Record Manual Sale</h1>

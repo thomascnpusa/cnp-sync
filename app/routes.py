@@ -71,6 +71,122 @@ def inventory():
     inventory_paginated = query.paginate(page=page, per_page=per_page, error_out=False)
     inventory_items = inventory_paginated.items
     
+    # Quick adjust handling
+    if request.method == 'POST' and 'adjust_quantity' in request.form:
+        inventory_id = request.form.get('inventory_id')
+        adjust_quantity = float(request.form.get('adjust_quantity', 0))
+        reason = request.form.get('reason', 'Manual adjustment')
+        inventory = Inventory.query.get_or_404(inventory_id)
+        new_quantity = inventory.quantity + adjust_quantity
+        if new_quantity < 0:
+            flash('Adjustment would result in negative inventory!', 'error')
+        else:
+            inventory.quantity = new_quantity
+            db.session.commit()
+            flash(f'Adjusted {inventory.product.product_name} by {adjust_quantity} (New total: {new_quantity}). Reason: {reason}', 'success')
+        return redirect(url_for('main.inventory', page=page, search=search_query, sellable=sellable_filter, sort=sort_by, order=sort_order))
+    
+    batch_history = {}
+    for item in inventory_items:
+        if item.batch_number:
+            batches = item.batch_number.split(';')
+            history = []
+            for batch in batches:
+                order = ProductionOrder.query.filter_by(production_batch=batch).first()
+                if order:
+                    history.append({
+                        'batch': batch,
+                        'order_id': order.order_id,
+                        'product_id': order.product_id,
+                        'quantity': order.quantity_to_produce,
+                        'status': order.status,
+                        'date': order.date_fulfilled or order.date_submitted
+                    })
+            batch_history[item.inventory_id] = history
+    
+    low_items = Inventory.query.filter(Inventory.quantity < Inventory.minimum_quantity).all()
+    if low_items:
+        msg = Message("Low Stock Alert", recipients=['your-email@gmail.com'])
+        msg.body = "The following items are below minimum stock levels:\n\n"
+        for item in low_items:
+            msg.body += f"{item.product.product_name} ({item.product_id}) at {item.location}: {item.quantity} (Min: {item.minimum_quantity})\n"
+        try:
+            mail.send(msg)
+            print("Low stock alert email sent!")
+        except Exception as e:
+            print(f"Failed to send email: {e}")
+    
+    if 'export' in request.args:
+        output = io.StringIO()
+        writer = csv.writer(output)
+        writer.writerow(['Product ID', 'Name', 'Location', 'Quantity', 'Min Qty', 'Batch Number', 'Expiry Date', 'Sellable'])
+        for item in query.all():
+            writer.writerow([
+                item.product_id,
+                item.product.product_name,
+                item.location,
+                item.quantity,
+                item.minimum_quantity,
+                item.batch_number or 'N/A',
+                item.expiry_date or 'N/A',
+                'Yes' if item.product.sellable else 'No'
+            ])
+        return Response(output.getvalue(), mimetype='text/csv', headers={"Content-Disposition": "attachment;filename=inventory.csv"})
+    
+    expiry_threshold = datetime.now() + timedelta(days=30)
+    return render_template('inventory.html', 
+                         lookback_days=report_data['lookback_days'],
+                         inventory=inventory_items,
+                         low_inventory=low_items,
+                         pagination=inventory_paginated,
+                         search_query=search_query,
+                         sellable_filter=sellable_filter,
+                         sort_by=sort_by,
+                         sort_order=sort_order,
+                         expiry_threshold=expiry_threshold,
+                         batch_history=batch_history)
+    from report_inventory import report_inventory
+    from app.models import Inventory, ProductionOrder, ProductionAuditLog
+    from flask import request, Response
+    from datetime import datetime, timedelta
+    import csv
+    import io
+    print("Inventory report triggered!")
+    report_data = report_inventory(current_app)
+    
+    page = request.args.get('page', 1, type=int)
+    per_page = 25
+    search_query = request.args.get('search', '')
+    sellable_filter = request.args.get('sellable', 'all')
+    sort_by = request.args.get('sort', 'product_id')
+    sort_order = request.args.get('order', 'asc')
+    
+    query = Inventory.query.join(Product)
+    if search_query:
+        query = query.filter(or_(
+            Product.product_id.ilike(f'%{search_query}%'),
+            Product.product_name.ilike(f'%{search_query}%'),
+            Inventory.batch_number.ilike(f'%{search_query}%')
+        ))
+    if sellable_filter == 'sellable':
+        query = query.filter(Product.sellable == True)
+    elif sellable_filter == 'non-sellable':
+        query = query.filter(Product.sellable == False)
+    
+    if sort_by == 'quantity':
+        order_column = Inventory.quantity
+    elif sort_by == 'expiry_date':
+        order_column = Inventory.expiry_date
+    else:
+        order_column = Product.product_id
+    if sort_order == 'desc':
+        query = query.order_by(order_column.desc())
+    else:
+        query = query.order_by(order_column.asc())
+    
+    inventory_paginated = query.paginate(page=page, per_page=per_page, error_out=False)
+    inventory_items = inventory_paginated.items
+    
     batch_history = {}
     for item in inventory_items:
         if item.batch_number:

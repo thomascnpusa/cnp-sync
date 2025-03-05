@@ -62,6 +62,7 @@ class ProductionOrder(db.Model):
     qa_signoff = db.Column(db.String(50), nullable=True)  # QA username or initials
     product = db.relationship('Product', backref='production_orders')
     operator = db.relationship('User', backref='production_orders')
+    is_rush = db.Column(db.Boolean, default=False, nullable=False)
 
 class BillOfMaterials(db.Model):
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)

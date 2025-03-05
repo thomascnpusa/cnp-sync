@@ -1,47 +1,36 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Submit Production Order</title>
+    <title>Produce</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
     <style>
         .form-group { margin-bottom: 15px; }
         .form-control { width: 100%; padding: 5px; }
-        .btn { padding: 5px 10px; }
-        .search-bar { margin-bottom: 20px; }
+        .btn { padding: 5px 10px; background: #007bff; color: white; border: none; border-radius: 4px; cursor: pointer; }
+        .btn:hover { background: #0056b3; }
+        .checkbox-label { display: inline-block; margin-left: 5px; }
     </style>
 </head>
 <body>
     <div class="navbar">
-        <a href="/">Home</a>
-        <a href="/sync">Sync</a>
-        <a href="/inventory">Inventory</a>
-        <a href="/receive">Receive</a>
-        <a href="/produce">Produce</a>
-        <a href="/fulfill">Fulfill Orders</a>
-        <a href="/adjust">Adjust</a>
-        <a href="/sales">Sales</a>
-        <a href="/manual-sale">Manual Sale</a>
-        <a href="/history">Order History</a>
+        <a href="{{ url_for('main.home') }}">Home</a>
+        <a href="{{ url_for('main.sync') }}">Sync</a>
+        <a href="{{ url_for('main.inventory') }}">Inventory</a>
+        <a href="{{ url_for('main.receive') }}">Receive</a>
+        <a href="{{ url_for('main.produce') }}">Produce</a>
+        <a href="{{ url_for('main.fulfill') }}">Fulfill</a>
+        <a href="{{ url_for('main.adjust') }}">Adjust</a>
+        <a href="{{ url_for('main.sales') }}">Sales</a>
+        <a href="{{ url_for('main.manual_sale') }}">Manual Sale</a>
+        <a href="{{ url_for('main.history') }}">History</a>
     </div>
     <div class="container">
         <h1>Submit Production Order</h1>
         <form method="POST">
             {{ form.hidden_tag() }}
             <div class="form-group">
-                <label for="productSearch">{{ form.product.label }}</label>
-                <input type="text" id="productSearch" list="productList" name="product" class="form-control" placeholder="Search products..." required>
-                <datalist id="productList">
-                    {% for product in products %}
-                        <option value="{{ product.product_id }}">{{ product.product_name }} ({{ product.product_id }}) - {{ product.default_unit_of_measure }}</option>
-                    {% endfor %}
-                </datalist>
-                {% if form.product.errors %}
-                    <ul class="errors">
-                        {% for error in form.product.errors %}
-                            <li>{{ error }}</li>
-                        {% endfor %}
-                    </ul>
-                {% endif %}
+                <label>{{ form.product.label }}</label>
+                {{ form.product(class="form-control") }}
             </div>
             <div class="form-group">
                 <label>{{ form.quantity.label }}</label>
@@ -51,9 +40,12 @@
                 <label>{{ form.notes.label }}</label>
                 {{ form.notes(class="form-control", rows="3") }}
             </div>
-            {{ form.submit(class="btn", value="Submit Production Order") }}
+            <div class="form-group">
+                {{ form.is_rush(id="rush-checkbox") }}
+                <label for="rush-checkbox" class="checkbox-label">{{ form.is_rush.label }}</label>
+            </div>
+            <button type="submit" class="btn">{{ form.submit.label }}</button>
         </form>
-
         {% with messages = get_flashed_messages(with_categories=true) %}
             {% if messages %}
                 <ul class="flashes">
