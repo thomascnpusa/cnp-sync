@@ -1,6 +1,7 @@
 from flask_wtf import FlaskForm
 from wtforms import StringField, FloatField, SelectField, TextAreaField, SubmitField, BooleanField, FieldList, FormField
 from wtforms.validators import DataRequired
+from wtforms.widgets import PasswordInput
 
 class ReceiveItemForm(FlaskForm):
     product = SelectField('Product', coerce=str)
@@ -42,8 +43,14 @@ class BOMForm(FlaskForm):
 class ProductDetailForm(FlaskForm):
     notes = TextAreaField('Notes')
     instructions = TextAreaField('Instructions')
-    submit = SubmitField('Update Notes')
+    unit_cost = FloatField('Unit Cost ($)', validators=[DataRequired()], default=0.0)
+    submit = SubmitField('Update Product Details')
 
 class FulfillForm(FlaskForm):
     order_id = StringField('Order ID', validators=[DataRequired()])
     submit = SubmitField('Fulfill Order')
+
+class LoginForm(FlaskForm):
+    username = StringField('Username', validators=[DataRequired()])
+    password = StringField('Password', validators=[DataRequired()], widget=PasswordInput())
+    submit = SubmitField('Login')

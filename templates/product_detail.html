@@ -87,15 +87,19 @@
             {% for item in bom_items %}
                 <tr>
                     <td>{{ item.component_product_id }}</td>
-                    <td>{{ item.product_component.product_name }}</td>
+                    <td>{{ item.component_product.product_name }}</td>
                     <td>{{ item.quantity }}</td>
                 </tr>
             {% endfor %}
         </tbody>
     </table>
-    <h2>Notes and Instructions</h2>
+    <h2>Product Details</h2>
     <form method="POST">
         {{ notes_form.hidden_tag() }}
+        <div class="form-group">
+            {{ notes_form.unit_cost.label }}
+            {{ notes_form.unit_cost(class="form-control") }}
+        </div>
         <div class="form-group">
             {{ notes_form.notes.label }}
             {{ notes_form.notes(class="form-control", rows="3") }}
@@ -104,6 +108,6 @@
             {{ notes_form.instructions.label }}
             {{ notes_form.instructions(class="form-control", rows="3") }}
         </div>
-        <input type="submit" name="notes_submit" value="Update Notes" class="btn">
+        {{ notes_form.submit(class="btn") }}
     </form>
 {% endblock %}
