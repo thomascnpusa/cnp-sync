@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sales Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="navbar">
+        <a href="/">Home</a>
+        <a href="/sync">Sync</a>
+        <a href="/inventory">Inventory</a>
+        <a href="/receive">Receive</a>
+        <a href="/produce">Produce</a>
+        <a href="/adjust">Adjust</a>
+        <a href="/sales">Sales</a>
+        <a href="/manual-sale">Manual Sale</a>
+    </div>
+    <div class="container">
+        <h1>Sales Dashboard</h1>
+        <h2>Sales by Product</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Product ID</th>
+                    <th>Product Name</th>
+                    <th>Total Sold</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for sale in sales_by_product %}
+                    <tr>
+                        <td>{{ sale.product_id }}</td>
+                        <td>{{ sale.product_name }}</td>
+                        <td>{{ sale.total_sold }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+        <h2>Sales by Channel</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Channel</th>
+                    <th>Total Sold</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for sale in sales_by_channel %}
+                    <tr>
+                        <td>{{ sale.channel }}</td>
+                        <td>{{ sale.total_sold }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

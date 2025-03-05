@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Manual Sale</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="navbar">
+        <a href="/">Home</a>
+        <a href="/sync">Sync</a>
+        <a href="/inventory">Inventory</a>
+        <a href="/receive">Receive</a>
+        <a href="/produce">Produce</a>
+    </div>
+    <div class="container">
+        <h1>Record Manual Sale</h1>
+        <form method="POST">
+            {{ form.hidden_tag() }}
+            <div>{{ form.product.label }} {{ form.product }}</div>
+            <div>{{ form.quantity.label }} {{ form.quantity }}</div>
+            <div>{{ form.channel.label }} {{ form.channel }}</div>
+            {{ form.submit(class="btn") }}
+        </form>
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                <ul>
+                    {% for message in messages %}
+                        <li>{{ message }}</li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        {% endwith %}
+    </div>
+</body>
+</html>

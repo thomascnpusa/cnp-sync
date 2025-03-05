@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CNP Inventory Management</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="navbar">
+        <a href="/">Home</a>
+        <a href="/sync">Sync</a>
+        <a href="/inventory">Inventory</a>
+        <a href="/receive">Receive</a>
+        <a href="/produce">Produce</a>
+        <a href="/adjust">Adjust</a>
+        <a href="/sales">Sales</a>
+        <a href="/manual-sale">Manual Sale</a>
+    </div>
+    <div class="container">
+        <h1>Welcome to CNP Inventory Management</h1>
+        <div class="nav-links">
+            <p><a href="/sync">Sync Shopify Sales</a></p>
+            <p><a href="/inventory">View Inventory Report</a></p>
+            <p><a href="/receive">Receive Inventory</a></p>
+            <p><a href="/produce">Start Production</a></p>
+            <p><a href="/adjust">Adjust Inventory</a></p>
+            <p><a href="/sales">Sales Dashboard</a></p>
+            <p><a href="/manual-sale">Record Manual Sale</a></p>
+        </div>
+    </div>
+</body>
+</html>

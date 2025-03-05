@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ product.product_name }} ({{ product.product_id }}) Details</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+        .excel-table { width: 100%; border-collapse: collapse; margin-bottom: 20px; }
+        .excel-table th, .excel-table td { border: 1px solid #ddd; padding: 8px; text-align: left; }
+        .excel-table th { background: #ecf0f1; }
+        .form-group { margin-bottom: 15px; }
+        .form-control { width: 100%; padding: 5px; }
+        .btn { padding: 5px 10px; }
+        .adjust-link { font-size: 0.9em; margin-left: 5px; color: #007bff; text-decoration: none; }
+        .adjust-link:hover { text-decoration: underline; }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <a href="/">Home</a>
+        <a href="/sync">Sync</a>
+        <a href="/inventory">Inventory</a>
+        <a href="/receive">Receive</a>
+        <a href="/produce">Produce</a>
+        <a href="/fulfill">Fulfill Orders</a>
+        <a href="/adjust">Adjust</a>
+        <a href="/sales">Sales</a>
+        <a href="/manual-sale">Manual Sale</a>
+        <a href="/history">Order History</a>
+    </div>
+    <div class="container">
+        <h1>{{ product.product_name }} ({{ product.product_id }})</h1>
+        
+        <h2>Inventory</h2>
+        {% if inventory %}
+            <table class="excel-table">
+                <thead>
+                    <tr>
+                        <th>Location</th>
+                        <th>Quantity</th>
+                        <th>Min Qty</th>
+                        <th>Batch Number</th>
+                        <th>Expiry Date</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for item in inventory %}
+                        <tr>
+                            <td>{{ item.location }}</td>
+                            <td>{{ item.quantity }}</td>
+                            <td>{{ item.minimum_quantity }}</td>
+                            <td>{{ item.batch_number or 'N/A' }}</td>
+                            <td>{{ item.expiry_date or 'N/A' }}</td>
+                            <td><a href="{{ url_for('main.adjust', product_id=item.product_id) }}" class="adjust-link">Adjust</a></td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        {% else %}
+            <p>No inventory records found.</p>
+        {% endif %}
+
+        <h2>Sales Information</h2>
+        {% if sales_total %}
+            <p><strong>Total Sold:</strong> {{ sales_total.total_sold }}</p>
+            <table class="excel-table">
+                <thead>
+                    <tr>
+                        <th>Channel</th>
+                        <th>Quantity Sold</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for channel in sales_by_channel %}
+                        <tr>
+                            <td>{{ channel.channel }}</td>
+                            <td>{{ channel.total_sold }}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        {% else %}
+            <p>No sales recorded for this product.</p>
+        {% endif %}
+
+        <h2>Production Orders</h2>
+        {% if production_orders %}
+            <table class="excel-table">
+                <thead>
+                    <tr>
+                        <th>Order ID</th>
+                        <th>Batch</th>
+                        <th>Quantity</th>
+                        <th>Status</th>
+                        <th>Submitted</th>
+                        <th>Fulfilled</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for order in production_orders %}
+                        <tr>
+                            <td><a href="{{ url_for('main.order_detail', order_id=order.order_id) }}">{{ order.order_id }}</a></td>
+                            <td>{{ order.production_batch }}</td>
+                            <td>{{ order.quantity_to_produce }} {{ product.default_unit_of_measure }}</td>
+                            <td>{{ order.status }}</td>
+                            <td>{{ order.date_submitted }}</td>
+                            <td>{{ order.date_fulfilled or 'N/A' }}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        {% else %}
+            <p>No production orders for this product.</p>
+        {% endif %}
+
+        <h2>Bill of Materials</h2>
+        {% if bom_items %}
+            <table class="excel-table">
+                <thead>
+                    <tr>
+                        <th>Component Product ID</th>
+                        <th>Component Name</th>
+                        <th>Quantity</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for item in bom_items %}
+                        <tr>
+                            <td>{{ item.component_product_id }}</td>
+                            <td>{{ item.product_component.product_name }}</td>
+                            <td>{{ item.quantity }} {{ item.product_component.default_unit_of_measure }}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        {% else %}
+            <p>No BOM items defined.</p>
+        {% endif %}
+        <form method="POST">
+            {{ bom_form.hidden_tag() }}
+            {% for item in bom_form.items %}
+                <div class="form-group">
+                    {{ item.component_product.label }}: {{ item.component_product(class="form-control") }}
+                    {{ item.quantity.label }}: {{ item.quantity(class="form-control") }}
+                </div>
+            {% endfor %}
+            <button type="submit" name="bom_submit" class="btn">Add BOM Items</button>
+        </form>
+
+        <h2>Notes and Instructions</h2>
+        <form method="POST">
+            {{ notes_form.hidden_tag() }}
+            <div class="form-group">
+                <label>{{ notes_form.notes.label }}</label>
+                {{ notes_form.notes(class="form-control", rows="3") }}
+            </div>
+            <div class="form-group">
+                <label>{{ notes_form.instructions.label }}</label>
+                {{ notes_form.instructions(class="form-control", rows="3") }}
+            </div>
+            <button type="submit" name="notes_submit" class="btn">Update Notes</button>
+        </form>
+
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                <ul class="flashes">
+                    {% for category, message in messages %}
+                        <li class="{{ category }}">{{ message }}</li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        {% endwith %}
+    </div>
+</body>
+</html>

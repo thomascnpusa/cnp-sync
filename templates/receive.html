@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Receive Inventory</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/flatpickr.min.css') }}">
+    <script src="{{ url_for('static', filename='js/flatpickr.min.js') }}"></script>
+    <style>
+        .excel-table { width: 100%; border-collapse: collapse; margin-bottom: 20px; }
+        .excel-table th, .excel-table td { border: 1px solid #ddd; padding: 8px; text-align: left; }
+        .excel-table th { background: #ecf0f1; }
+        .excel-table select, .excel-table input { width: 100%; padding: 5px; box-sizing: border-box; }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <a href="/">Home</a>
+        <a href="/sync">Sync</a>
+        <a href="/inventory">Inventory</a>
+        <a href="/receive">Receive</a>
+        <a href="/produce">Produce</a>
+        <a href="/adjust">Adjust</a>
+        <a href="/sales">Sales</a>
+        <a href="/manual-sale">Manual Sale</a>
+    </div>
+    <div class="container">
+        <h1>Receive Inventory</h1>
+        <form method="POST" id="receiveForm">
+            {{ form.hidden_tag() }}
+            <table class="excel-table" id="receiveTable">
+                <thead>
+                    <tr>
+                        <th>Product (Unit)</th>
+                        <th>Quantity</th>
+                        <th>Batch Number</th>
+                        <th>Expiry Date</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for item in form.items %}
+                        <tr>
+                            <td>{{ item.product }}</td>
+                            <td>{{ item.quantity }}</td>
+                            <td>{{ item.batch_number }}</td>
+                            <td>{{ item.expiry_date(class="flatpickr") }}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            <button type="button" id="addRow" class="btn">Add Row</button>
+            <button type="submit" name="receive_submit" class="btn">Receive Inventory</button>
+        </form>
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                <ul class="flashes">
+                    {% for category, message in messages %}
+                        <li class="{{ category }}">{{ message }}</li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        {% endwith %}
+        <script>
+            document.addEventListener("DOMContentLoaded", function() {
+                flatpickr(".flatpickr", {
+                    dateFormat: "Y-m-d",
+                    allowInput: true
+                });
+                const table = document.getElementById("receiveTable").getElementsByTagName('tbody')[0];
+                const addRowBtn = document.getElementById("addRow");
+                let rowIndex = {{ form.items|length }};
+                addRowBtn.addEventListener("click", function() {
+                    const newRow = table.rows[0].cloneNode(true);
+                    const inputs = newRow.getElementsByTagName("input");
+                    const selects = newRow.getElementsByTagName("select");
+                    for (let input of inputs) {
+                        input.name = input.name.replace(/items-\d+-/, `items-${rowIndex}-`);
+                        input.id = input.id.replace(/items-\d+-/, `items-${rowIndex}-`);
+                        input.value = "";
+                    }
+                    for (let select of selects) {
+                        select.name = select.name.replace(/items-\d+-/, `items-${rowIndex}-`);
+                        select.id = select.id.replace(/items-\d+-/, `items-${rowIndex}-`);
+                        select.selectedIndex = 0;
+                    }
+                    table.appendChild(newRow);
+                    flatpickr(newRow.querySelector(".flatpickr"), {
+                        dateFormat: "Y-m-d",
+                        allowInput: true
+                    });
+                    rowIndex++;
+                });
+            });
+        </script>
+    </div>
+</body>
+</html>

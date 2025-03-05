@@ -1,0 +1,252 @@
+Starting scheduler...
+Models loaded: <class 'app.models.Product'> <class 'app.models.Inventory'> <class 'app.models.Sale'> <class 'app.models.InventoryReceipt'> <class 'app.models.ProductionOrder'> <class 'app.models.BillOfMaterials'>
+Running scheduled sync at Tue Mar  4 15:38:30 2025
+Existing order IDs: {'#WS1829', '#168806', '#168807', '#168772', '#168827', '#WS1801', '#WS1832', '#168782', '#168801', '#WS1818', '#168814', '#168786', '#168770', '#WS1814', '#168809', '#WS1828', '#WS1812', '#168798', '#N9WXSUSFPR', '#WS1823', '#168792', '#WS1815', '#168779', '#WS1827', '#168823', '#WS1831', '#WS1836', '#WS1821', '#WS1824', '#168774', '#168813', '#168803', '#168778', '#168781', '#168822', '#WS1833', '#168785', '#WS1825'}
+CNP Pet response status: 200
+CNP Pet found 1 orders
+Product P-1000 not found in database for order #1058PET
+Synced sales for CNP Pet
+CNPUSA response status: 200
+CNPUSA found 50 orders
+Product 7002 not found in database for order #168832
+Product 9002 not found in database for order #168831
+Product 1011 not found in database for order #168829
+Product 7002 not found in database for order #168828
+Skipping item in order #168828: No SKU
+Product NVDPROTECTION1.95 not found in database for order #168828
+Product 30000-1 not found in database for order #168826
+Product 9004 not found in database for order #168825
+Product 4003 not found in database for order #168824
+Product 1002 not found in database for order #168821
+Product 5004 not found in database for order #168820
+Product 2002 not found in database for order #168819
+Product 1011-G not found in database for order #168818
+Product 3001 not found in database for order #168817
+Product 5001 not found in database for order #168817
+Product 6002 not found in database for order #168817
+Product 7002 not found in database for order #168817
+Product 1001 not found in database for order #168817
+Product 1011-FBM not found in database for order #168816
+Product 1002 not found in database for order #168815
+Product 6002 not found in database for order #168812
+Product 9002 not found in database for order #168811
+Product 6002 not found in database for order #168810
+Product 1011 not found in database for order #168808
+Skipping item in order #168805: No SKU
+Product 100 not found in database for order #168805
+Product 60000 not found in database for order #168804
+Product NVDPROTECTION43 not found in database for order #168802
+Product 1001 not found in database for order #168800
+Product 6002 not found in database for order #168800
+Product 2001 not found in database for order #168799
+Product 2002 not found in database for order #168797
+Product 2002 not found in database for order #168796
+Product 15031+MF+ not found in database for order #168795
+Product 15005.2 not found in database for order #168794
+Product 1002 not found in database for order #168793
+Product 200 not found in database for order #168791
+Product 9002 not found in database for order #168790
+Product 11001 not found in database for order #168789
+Product 8002 not found in database for order #168788
+Product 100 not found in database for order #168787
+Product 1011 not found in database for order #168784
+Product 6002 not found in database for order #168783
+Synced sales for CNPUSA
+CNPUSA Wholesale response status: 200
+CNPUSA Wholesale found 23 orders
+Skipping item in order #WS1835: No SKU
+Product 1011 not found in database for order #WS1834
+Skipping item in order #WS1830: No SKU
+Skipping item in order #WS1830: No SKU
+Skipping item in order #WS1830: No SKU
+Product 1011 not found in database for order #WS1826
+Product 2002 not found in database for order #WS1822
+Product 3002 not found in database for order #WS1822
+Product 7002 not found in database for order #WS1820
+Product 8002 not found in database for order #WS1820
+Product 4002 not found in database for order #WS1820
+Product 9002 not found in database for order #WS1820
+Product 6002 not found in database for order #WS1820
+Product 5002 not found in database for order #WS1820
+Product 1011 not found in database for order #WS1820
+Product 3002 not found in database for order #WS1820
+Product 2004 not found in database for order #WS1820
+Product 1002 not found in database for order #WS1820
+Product 6001 not found in database for order #WS1804
+Product 5001 not found in database for order #WS1804
+Synced sales for CNPUSA Wholesale
+Forecasting with 19-day lookback:
+15020: total_sold=28, daily_rate=1.47, forecast=10.32, threshold=10.32, current=22.0
+No order needed for 15020: quantity above threshold
+15021: total_sold=85, daily_rate=4.47, forecast=31.32, threshold=31.32, current=49.0
+No order needed for 15021: quantity above threshold
+15008: total_sold=2, daily_rate=0.11, forecast=0.74, threshold=0.74, current=48.0
+No order needed for 15008: quantity above threshold
+34000: total_sold=26, daily_rate=1.37, forecast=9.58, threshold=9.58, current=24.0
+No order needed for 34000: quantity above threshold
+15007: total_sold=1, daily_rate=0.05, forecast=0.37, threshold=0.37, current=49.0
+No order needed for 15007: quantity above threshold
+15035: total_sold=1, daily_rate=0.05, forecast=0.37, threshold=0.37, current=49.0
+No order needed for 15035: quantity above threshold
+15040: total_sold=2, daily_rate=0.11, forecast=0.74, threshold=0.74, current=48.0
+No order needed for 15040: quantity above threshold
+15023: total_sold=5, daily_rate=0.26, forecast=1.84, threshold=1.84, current=45.0
+No order needed for 15023: quantity above threshold
+15005: total_sold=3, daily_rate=0.16, forecast=1.11, threshold=1.11, current=47.0
+No order needed for 15005: quantity above threshold
+15029: total_sold=4, daily_rate=0.21, forecast=1.47, threshold=1.47, current=46.0
+No order needed for 15029: quantity above threshold
+P-12: total_sold=1, daily_rate=0.05, forecast=0.37, threshold=0.37, current=49.0
+No order needed for P-12: quantity above threshold
+21001: total_sold=2, daily_rate=0.11, forecast=0.74, threshold=0.74, current=48.0
+No order needed for 21001: quantity above threshold
+15022: total_sold=22, daily_rate=1.16, forecast=8.11, threshold=8.11, current=28.0
+No order needed for 15022: quantity above threshold
+15028: total_sold=1, daily_rate=0.05, forecast=0.37, threshold=0.37, current=49.0
+No order needed for 15028: quantity above threshold
+15006: total_sold=1, daily_rate=0.05, forecast=0.37, threshold=0.37, current=49.0
+No order needed for 15006: quantity above threshold
+15036: total_sold=6, daily_rate=0.32, forecast=2.21, threshold=2.21, current=44.0
+No order needed for 15036: quantity above threshold
+15019: total_sold=14, daily_rate=0.74, forecast=5.16, threshold=5.16, current=36.0
+No order needed for 15019: quantity above threshold
+38000: total_sold=2, daily_rate=0.11, forecast=0.74, threshold=0.74, current=48.0
+No order needed for 38000: quantity above threshold
+30000: total_sold=26, daily_rate=1.37, forecast=9.58, threshold=9.58, current=24.0
+No order needed for 30000: quantity above threshold
+15010: total_sold=16, daily_rate=0.84, forecast=5.89, threshold=5.89, current=34.0
+No order needed for 15010: quantity above threshold
+15004: total_sold=2, daily_rate=0.11, forecast=0.74, threshold=0.74, current=48.0
+No order needed for 15004: quantity above threshold
+15001: total_sold=1, daily_rate=0.05, forecast=0.37, threshold=0.37, current=49.0
+No order needed for 15001: quantity above threshold
+15003: total_sold=5, daily_rate=0.26, forecast=1.84, threshold=1.84, current=45.0
+No order needed for 15003: quantity above threshold
+15014: total_sold=12, daily_rate=0.63, forecast=4.42, threshold=4.42, current=38.0
+No order needed for 15014: quantity above threshold
+15032: total_sold=4, daily_rate=0.21, forecast=1.47, threshold=1.47, current=46.0
+No order needed for 15032: quantity above threshold
+32000: total_sold=8, daily_rate=0.42, forecast=2.95, threshold=2.95, current=42.0
+No order needed for 32000: quantity above threshold
+15002: total_sold=3, daily_rate=0.16, forecast=1.11, threshold=1.11, current=47.0
+No order needed for 15002: quantity above threshold
+15033: total_sold=8, daily_rate=0.42, forecast=2.95, threshold=2.95, current=42.0
+No order needed for 15033: quantity above threshold
+15041: total_sold=10, daily_rate=0.53, forecast=3.68, threshold=3.68, current=40.0
+No order needed for 15041: quantity above threshold
+18005: total_sold=2, daily_rate=0.11, forecast=0.74, threshold=20.74, current=48.0
+No order needed for 18005: quantity above threshold
+15015: total_sold=6, daily_rate=0.32, forecast=2.21, threshold=2.21, current=44.0
+No order needed for 15015: quantity above threshold
+15009: total_sold=5, daily_rate=0.26, forecast=1.84, threshold=1.84, current=45.0
+No order needed for 15009: quantity above threshold
+16002: total_sold=3, daily_rate=0.16, forecast=1.11, threshold=1.11, current=47.0
+No order needed for 16002: quantity above threshold
+15012: total_sold=18, daily_rate=0.95, forecast=6.63, threshold=6.63, current=32.0
+No order needed for 15012: quantity above threshold
+13011: total_sold=2, daily_rate=0.11, forecast=0.74, threshold=0.74, current=48.0
+No order needed for 13011: quantity above threshold
+35000: total_sold=6, daily_rate=0.32, forecast=2.21, threshold=2.21, current=44.0
+No order needed for 35000: quantity above threshold
+24000: total_sold=5, daily_rate=0.26, forecast=1.84, threshold=1.84, current=45.0
+No order needed for 24000: quantity above threshold
+15018: total_sold=19, daily_rate=1.00, forecast=7.00, threshold=7.00, current=31.0
+No order needed for 15018: quantity above threshold
+13021: total_sold=2, daily_rate=0.11, forecast=0.74, threshold=0.74, current=48.0
+No order needed for 13021: quantity above threshold
+P-11: total_sold=1, daily_rate=0.05, forecast=0.37, threshold=0.37, current=49.0
+No order needed for P-11: quantity above threshold
+Production orders triggered successfully!
+Models loaded: <class 'app.models.Product'> <class 'app.models.Inventory'> <class 'app.models.Sale'> <class 'app.models.InventoryReceipt'> <class 'app.models.ProductionOrder'> <class 'app.models.BillOfMaterials'>
+Running scheduled sync at Tue Mar  4 17:38:56 2025
+Existing order IDs: {'#WS1829', '#168806', '#168807', '#168772', '#168827', '#WS1801', '#168833', '#WS1832', '#168782', '#168801', '#WS1818', '#168814', '#168786', '#168770', '#WS1814', '#168809', '#WS1828', '#WS1812', '#168798', '#N9WXSUSFPR', '#WS1823', '#168792', '#WS1815', '#168779', '#WS1827', '#168823', '#WS1831', '#WS1836', '#WS1821', '#WS1824', '#168774', '#168813', '#168803', '#168778', '#168781', '#168822', '#WS1833', '#168785', '#WS1825'}
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/urllib3/connection.py", line 198, in _new_conn
+    sock = connection.create_connection(
+        (self._dns_host, self.port),
+    ...<2 lines>...
+        socket_options=self.socket_options,
+    )
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/urllib3/util/connection.py", line 60, in create_connection
+    for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+               ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/socket.py", line 977, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+               ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+socket.gaierror: [Errno 8] nodename nor servname provided, or not known
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/urllib3/connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+        conn,
+    ...<10 lines>...
+        **response_kw,
+    )
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/urllib3/connectionpool.py", line 488, in _make_request
+    raise new_e
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/urllib3/connectionpool.py", line 464, in _make_request
+    self._validate_conn(conn)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/urllib3/connectionpool.py", line 1093, in _validate_conn
+    conn.connect()
+    ~~~~~~~~~~~~^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/urllib3/connection.py", line 704, in connect
+    self.sock = sock = self._new_conn()
+                       ~~~~~~~~~~~~~~^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/urllib3/connection.py", line 205, in _new_conn
+    raise NameResolutionError(self.host, self, e) from e
+urllib3.exceptions.NameResolutionError: <urllib3.connection.HTTPSConnection object at 0x107e52350>: Failed to resolve 'complete-natural-products.myshopify.com' ([Errno 8] nodename nor servname provided, or not known)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/requests/adapters.py", line 667, in send
+    resp = conn.urlopen(
+        method=request.method,
+    ...<9 lines>...
+        chunked=chunked,
+    )
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/urllib3/connectionpool.py", line 841, in urlopen
+    retries = retries.increment(
+        method, url, error=new_e, _pool=self, _stacktrace=sys.exc_info()[2]
+    )
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/urllib3/util/retry.py", line 519, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='complete-natural-products.myshopify.com', port=443): Max retries exceeded with url: /admin/api/2023-10/orders.json?status=any&updated_at_min=2025-02-25T17%3A38%3A56.500538Z (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x107e52350>: Failed to resolve 'complete-natural-products.myshopify.com' ([Errno 8] nodename nor servname provided, or not known)"))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/thomaspoole/Desktop/cnp-sync/scheduler.py", line 19, in <module>
+    schedule.run_pending()
+    ~~~~~~~~~~~~~~~~~~~~^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/schedule/__init__.py", line 854, in run_pending
+    default_scheduler.run_pending()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/schedule/__init__.py", line 101, in run_pending
+    self._run_job(job)
+    ~~~~~~~~~~~~~^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/schedule/__init__.py", line 173, in _run_job
+    ret = job.run()
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/schedule/__init__.py", line 691, in run
+    ret = self.job_func()
+  File "/Users/thomaspoole/Desktop/cnp-sync/scheduler.py", line 10, in run_sync
+    sync_sales()
+    ~~~~~~~~~~^^
+  File "/Users/thomaspoole/Desktop/cnp-sync/app/shopify_sync.py", line 27, in sync_sales
+    response = requests.get(url, headers=headers, params=params)
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/requests/api.py", line 73, in get
+    return request("get", url, params=params, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/requests/api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/requests/adapters.py", line 700, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPSConnectionPool(host='complete-natural-products.myshopify.com', port=443): Max retries exceeded with url: /admin/api/2023-10/orders.json?status=any&updated_at_min=2025-02-25T17%3A38%3A56.500538Z (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x107e52350>: Failed to resolve 'complete-natural-products.myshopify.com' ([Errno 8] nodename nor servname provided, or not known)"))

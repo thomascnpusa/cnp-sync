@@ -1,0 +1,486 @@
+product_id,product_name,type,quantity,minimum_quantity,location,batch_number,default_unit_of_measure,Sellable
+20001,Brighter Shine,Alternatives,50,0.0000,Woods Cross,None,ea,True
+TEST-1,Brighter Shine TEST,Alternatives,50,0.0000,Woods Cross,None,ea,True
+22000,Complete Sugar Blocker Spray,Alternatives,50,0.0000,Woods Cross,None,ea,True
+100296,Batch of Anti Anxiety & Calming Superfood Powder,Bulk Powders,50,0.0000,Woods Cross,None,ea,False
+100221,Batch of Good Greens Powder,Bulk Powders,50,0.0000,Woods Cross,None,kg,False
+100295,Batch of Gut Greens ,Bulk Powders,50,0.0000,Woods Cross,None,ea,False
+100294,Batch of Organic & Kosher Greens Superfood Powder,Bulk Powders,50,0.0000,Woods Cross,None,ea,False
+100293,Batch of Weight Management Superfood Greens,Bulk Powders,50,0.0000,Woods Cross,None,ea,False
+100329,Bulk powder - Brighter Shine,Bulk Powders,50,0.0000,Woods Cross,None,ea,False
+110001,Bulk Powder - Gallbladder and Liver Complete,Bulk Powders - Liquid,50,0.0000,Woods Cross,None,kg,False
+110000,Bulk Powder - Kidney Complete,Bulk Powders - Liquid,50,0.0000,Woods Cross,None,kg,False
+110007,Bulk Powder - Prostate Complete,Bulk Powders - Liquid,50,0.0000,Woods Cross,None,kg,False
+110004,Bulk Powder - Uric Acid and Arthritis Complete,Bulk Powders - Liquid,50,0.0000,Woods Cross,None,kg,False
+110006,Bulk Powder - Urinary Tract Complete,Bulk Powders - Liquid,50,0.0000,Woods Cross,None,kg,False
+15017,Biotin Vitamin B7 and Coenzyme R Supplement,Capsules ,50,0.0000,Woods Cross,None,ea,True
+15035,Calcium & Magnesium Capsules,Capsules ,50,0.0000,Woods Cross,None,ea,True
+15036,Calming Blend Capsules,Capsules ,50,0.0000,Woods Cross,None,ea,True
+15033,D-ManFalsese and Cranberry Capsules,Capsules ,50,0.0000,Woods Cross,None,ea,True
+15032,D-ManFalsese Capsules,Capsules ,50,0.0000,Woods Cross,None,ea,True
+GBUTI30,Goodbye UTI 30 ct Cranberry Capsule,Capsules ,50,0.0000,Woods Cross,None,ea,True
+GBUTI60,Goodbye UTI 60 ct Cranberry Capsule,Capsules ,50,0.0000,Woods Cross,None,ea,True
+15010,Grape Seed Extract Capsules,Capsules ,50,0.0000,Woods Cross,None,ea,True
+15034,Hibiscus Capsules,Capsules ,50,0.0000,Woods Cross,None,ea,True
+15031,Inulin Capsules,Capsules ,50,0.0000,Woods Cross,None,ea,True
+15022,Nattokinase Capsules,Capsules ,50,0.0000,Woods Cross,None,ea,True
+15037,Olive Leaf Capsules,Capsules ,50,0.0000,Woods Cross,None,ea,True
+15020,Organic Apple Cider Vinegar Capsules,Capsules ,50,0.0000,Woods Cross,None,ea,True
+15041,Organic Artichoke Capsules,Capsules ,50,0.0000,Woods Cross,None,ea,True
+15023,Organic Ashwagandha Capsules,Capsules ,50,0.0000,Woods Cross,None,ea,True
+15019,Organic Beet Root Capsules,Capsules ,50,0.0000,Woods Cross,None,ea,True
+15029,Organic Black Maca Root Capsules,Capsules ,50,0.0000,Woods Cross,None,ea,True
+15040,Organic Calming Capsules,Capsules ,50,0.0000,Woods Cross,None,Item,True
+16003,Organic Chaga Capsules,Capsules ,50,0.0000,Woods Cross,None,Item,True
+15018,Organic Chanca Piedra Capsules,Capsules ,50,0.0000,Woods Cross,None,ea,True
+15000,Organic Chlorella Capsules,Capsules ,50,0.0000,Woods Cross,None,ea,True
+15002,Organic Cranberry Capsules,Capsules ,50,0.0000,Woods Cross,None,ea,True
+15008,Organic Dandelion Root Capsules,Capsules ,50,0.0000,Woods Cross,None,ea,True
+15009,Organic Echinacea Root Capsules,Capsules ,50,0.0000,Woods Cross,None,ea,True
+15013,Organic Elderberry Capsules,Capsules ,50,0.0000,Woods Cross,None,ea,True
+15014,Organic Garlic Capsules,Capsules ,50,0.0000,Woods Cross,None,ea,True
+15007,Organic Green Alfalfa Leaf Capsules,Capsules ,50,0.0000,Woods Cross,None,ea,True
+16002,Organic Lion's Mane Capsules,Capsules ,50,0.0000,Woods Cross,None,ea,True
+15004,Organic Maca Root Capsules,Capsules ,50,0.0000,Woods Cross,None,ea,True
+16001,Organic Maitake Mushroom Capsules,Capsules ,50,0.0000,Woods Cross,None,ea,True
+15005,Organic Milk Thistle Capsules,Capsules ,50,0.0000,Woods Cross,None,ea,True
+15021,Organic Papaya Capsules,Capsules ,50,0.0000,Woods Cross,None,ea,True
+15006,Organic Raw Sea Kelp Capsules,Capsules ,50,0.0000,Woods Cross,None,ea,True
+15028,Organic Red Maca Root Capsules,Capsules ,50,0.0000,Woods Cross,None,ea,True
+16000,Organic Reishi Capsules,Capsules ,50,0.0000,Woods Cross,None,ea,True
+15001,Organic Spirulina Powder Capsules,Capsules ,50,0.0000,Woods Cross,None,ea,True
+15003,Organic Turmeric Curcumin Root Capsules,Capsules ,50,0.0000,Woods Cross,None,ea,True
+15012,Organic Whole Psyllium Husk Capsules,Capsules ,50,0.0000,Woods Cross,None,ea,True
+15015,Plant Based Digestive Enzyme Supplements,Capsules ,50,0.0000,Woods Cross,None,ea,True
+15030,Plant Based Immunity Enzyme Supplement,Capsules ,50,0.0000,Woods Cross,None,ea,True
+15016,Pure Garcinia Cambogia Tablets,Capsules ,50,0.0000,Woods Cross,None,ea,True
+100042,1 Gallon Natural HDPE Industrial Round 38-400 - 115gm,Containers,50,0.0000,Woods Cross,None,ea,False
+100362,100cc White HDPE Straight-Side pill packer 38-400,Containers,50,0.0000,Woods Cross,None,Item,False
+100264,12 oz clear square,Containers,50,0.0000,Woods Cross,None,ea,False
+100331,12 oz dark amber bottle 28-410 *china bottles,Containers,50,0.0000,Woods Cross,None,ea,False
+100238,12oz Amber PET Bottle Boston Rd W/24-410 Neck,Containers,50,0.0000,Woods Cross,None,ea,False
+100069,12oz PET Clear plastic Cosmo round Bottle w/24-410 neck (210 cs),Containers,50,0.0000,Woods Cross,None,ea,False
+100041,150cc Amber Glass Pill Packer - 45-400 Neck Finish,Containers,50,4320.0000,Woods Cross,None,ea,False
+100044,150cc White PET Packer 38-400,Containers,50,0.0000,Woods Cross,None,ea,False
+100594,16 oz Amber glass bottles 28-400 Boston round,Containers,50,300.0000,Woods Cross,None,ea,False
+100334,16oz Amber PET Jar 89-400,Containers,50,525.0000,Woods Cross,None,ea,False
+B230A,16oz Amber PET Plastic Cosmo Round Bottle w/ 24-410,Containers,50,2835.0000,Woods Cross,None,ea,False
+100071,"16oz Bullet Round, CLEAR, PET, 28-410 Neck Finish",Containers,50,0.0000,Woods Cross,None,ea,False
+B209CL,16oz Clear PET Plastic Cosmo round bottle w/ 24-410 neck Finish,Containers,50,0.0000,Woods Cross,None,ea,False
+100292,16oz Clear square juice bottle,Containers,50,0.0000,Woods Cross,None,ea,False
+100207,"16oz Cosmo Bottle, Light Amber, B249A",Containers,50,0.0000,Woods Cross,None,ea,False
+J093W,16oz White PET plastic single wall Jar w/ 89-400 neck finish,Containers,50,490.0000,Woods Cross,None,ea,False
+100076,"16oz. CLEAR Pet Jar, 89-400",Containers,50,0.0000,Woods Cross,None,ea,False
+100208,19oz Clear PET plastic single Jar - 89-400 / B236C,Containers,50,0.0000,Woods Cross,None,ea,False
+100234,19oz Dark Amber - PET single wall Jar w/ 89-400 neck,Containers,50,490.0000,Woods Cross,None,ea,False
+J103W,19oz White PET Plastic Single Wall Jar w/89-400 neck finish,Containers,50,1400.0000,Woods Cross,None,ea,False
+100647,28-400 Black PheFalselic P/E Cone - Glass bottle lid,Containers,50,1500.0000,Woods Cross,None,ea,False
+100201,"300cc Packer Bottle, Light Amber - 45-400 Part# BA300LA",Containers,50,0.0000,Woods Cross,None,ea,False
+100367,"4cc Scoop LH Natural 3500 pcs / 4.5"" handle MH",Containers,50,5000.0000,Woods Cross,None,Item,False
+100365,4oz Amber Glass Boston round bottle w/ 24-400 neck finish,Containers,50,0.0000,Woods Cross,None,Item,False
+100297,4oz Clear PET Cosmo/Bullet Bottle 24-410,Containers,50,0.0000,Woods Cross,None,ea,False
+100217,8oz Amber Glass Straight-sided round jar 70-400,Containers,50,0.0000,Woods Cross,None,ea,False
+B320A,8oz Amber PET boston round bottle w/ 24-410 Neck finish /280 per case,Containers,50,4200.0000,Woods Cross,None,ea,False
+100013,"8oz PET Plastic Boston Round, Clear w/ 24-410 neck (280 case)",Containers,50,0.0000,Woods Cross,None,ea,False
+100236,8oz White PET plastic single wall Jar w/ 70-400 neck finish,Containers,50,960.0000,Woods Cross,None,ea,False
+100333,9oz Amber Glass Straight-sided round jar 70-400,Containers,50,0.0000,Woods Cross,None,ea,False
+100366,Black PP Plastic 24-400 Ribbed skirt dropper assembly w/ rubber bulb & 108mm straight tip glass pipette (fits 4oz bottle),Containers,50,50.0000,Woods Cross,None,Item,False
+18001,Apple Cider Vinegar Gummies,Gummies,50,0.0000,Woods Cross,None,ea,True
+18005,Beet Root Gummies ,Gummies,50,20.0000,Woods Cross,None,ea,True
+18004,Cranberry Gummies ,Gummies,50,20.0000,Woods Cross,None,ea,True
+18002,Elderberry Immune Gummies,Gummies,50,0.0000,Woods Cross,None,ea,True
+18003,Turmeric Ginger Gummies,Gummies,50,0.0000,Woods Cross,None,ea,True
+100258,Acidopholis Powder,Ingredients,50,15.0000,Woods Cross,None,kg,False
+100008,Alfalfa Powder (organic),Ingredients,50,50.0000,Woods Cross,None,kg,False
+100055,Apple Cider Vinegar - Unflitered Unpasterized / Org. / Kosher,Ingredients,50,220.0000,Woods Cross,None,gallon,False
+100087,Apple Cider Vinegar Powder (organic),Ingredients,50,25.0000,Woods Cross,None,kg,False
+100119,"Apple Powder, Organic ",Ingredients,50,5.0000,Woods Cross,None,kg,True
+100091,Ascorbic acid USP/FCC Kosher GSO,Ingredients,50,15.0000,Woods Cross,None,kg,False
+100089,Ashwagandha Root powder 25kg organic,Ingredients,50,25.0000,Woods Cross,None,kg,False
+100098,Barley Grass Powder organic,Ingredients,50,15.0000,Woods Cross,None,kg,False
+100093,Bee Pollen Powder Imported,Ingredients,50,0.0000,Woods Cross,None,kg,False
+100092,beet juice powder organic,Ingredients,50,15.0000,Woods Cross,None,kg,False
+100007,Beet Root Powder (organic),Ingredients,50,75.0000,Woods Cross,None,kg,False
+100095,Berry Flavor Powder organic,Ingredients,50,15.0000,Woods Cross,None,kg,False
+100094,Black Carrot Extract Powder,Ingredients,50,10.0000,Woods Cross,None,kg,False
+100096,Black Currant Powder Organic,Ingredients,50,15.0000,Woods Cross,None,kg,False
+100097,Black Elderberry Extract 10:1 25kg drum,Ingredients,50,0.0000,Woods Cross,None,kg,False
+100099,Blueberry Powder organic,Ingredients,50,15.0000,Woods Cross,None,kg,False
+100086,Bulk 25mg CBD Gummies,Ingredients,50,0.0000,Woods Cross,None,ea,False
+100085,Bulk Apple Cider Vinegar Gummies,Ingredients,50,600.0000,Woods Cross,None,ea,False
+100084,Bulk Elderberry + Vit C Gummies,Ingredients,50,600.0000,Woods Cross,None,ea,False
+100231,Bulk Turmeric Gummies,Ingredients,50,0.0000,Woods Cross,None,ea,False
+100100,Burdock Root Powder Organic,Ingredients,50,0.4500,Woods Cross,None,kg,False
+100074,Calcium Citrate USP Powder - TCACI0121P - MOQ 100 kg (25 kg bags),Ingredients,50,15.0000,Woods Cross,None,kg,False
+100102,California Poppy Herb C/S organic,Ingredients,50,0.5000,Woods Cross,None,kg,False
+100104,Carrot Powder Organic,Ingredients,50,10.0000,Woods Cross,None,kg,False
+100105,Cascara Sagrada Bark Powder Wildcrafted,Ingredients,50,0.5000,Woods Cross,None,kg,False
+100249,Celery Seed Powder,Ingredients,50,0.9070,Woods Cross,None,lb,False
+100103,Chamomile Flower Powder Organic,Ingredients,50,0.5000,Woods Cross,None,kg,False
+100072,"Chanca Piedra Powder, Organic",Ingredients,50,75.0000,Woods Cross,None,kg,False
+100106,Cherry Flavor Powder organic,Ingredients,50,15.0000,Woods Cross,None,kg,False
+100063,Cherry Flavoring,Ingredients,50,5.0000,Woods Cross,None,kg,False
+100019,"Cherry Type Flavor, Natural Organic",Ingredients,50,5.0000,Woods Cross,None,kg,False
+100108,Chlorella (Cracked Cell) Powder Organic,Ingredients,50,25.0000,Woods Cross,None,kg,False
+100109,Chrysanthemum Flowers Yellow organic,Ingredients,50,0.0000,Woods Cross,None,kg,False
+100111,Cinnamon Flavor Extract,Ingredients,50,0.0000,Woods Cross,None,kg,False
+100212,"Cinnamon Leaf Essential Oil, Organic",Ingredients,50,8.0000,Woods Cross,None,oz,False
+100110,Citric Acid USP 10-40 Mesh,Ingredients,50,50.0000,Woods Cross,None,lb,False
+CITRIC ACID TEST,Citric Acid USP 10-40 Mesh-TEST,Ingredients,50,50.0000,Woods Cross,None,lb,False
+100154,Clover Honey Organic,Ingredients,50,40.0000,Woods Cross,None,lb,False
+100113,Cranberry Powder Organic,Ingredients,50,25.0000,Woods Cross,None,kg,False
+100114,Creatine MoFalse 80 Mesh 25kg drum,Ingredients,50,10.0000,Woods Cross,None,kg,False
+100122,Cured Fo-ti Root Powder Organic,Ingredients,50,0.0000,Woods Cross,None,oz,False
+100080,Dandelion Root Powder (Organic),Ingredients,50,15.0000,Woods Cross,None,kg,False
+100346,Dandelion Root Raw Cut & Sift Organic,Ingredients,50,0.0000,Woods Cross,None,kg,False
+100123,Devil's Claw Root Powder Organic,Ingredients,50,0.5000,Woods Cross,None,ea,False
+100065,DigeSEB Powder (Digestive Enzymes),Ingredients,50,50.0000,Woods Cross,None,kg,False
+100118,DL- Malic Acid FCC 25kg bag,Ingredients,50,0.0000,Woods Cross,None,kg,False
+100124,DL-Methionine,Ingredients,50,0.0000,Woods Cross,None,kg,False
+100050,D-ManFalsese Powder / 25kg per keg,Ingredients,50,100.0000,Woods Cross,None,kg,False
+100126,Dulse Leaf Powder Organic,Ingredients,50,0.0000,Woods Cross,None,kg,False
+100127,"Echinacea Powder, Organic",Ingredients,50,15.0000,Woods Cross,None,kg,False
+100128,Elderberry Juice powder,Ingredients,50,15.0000,Woods Cross,None,kg,False
+100199,"Elderberry Powder, Organic",Ingredients,50,15.0000,Woods Cross,None,kg,False
+100132,Fennel Seed Powder Organic,Ingredients,50,0.5000,Woods Cross,None,kg,False
+100150,GABA,Ingredients,50,0.5000,Woods Cross,None,kg,False
+1000231,Garcinia Cambogia 50%,Ingredients,50,0.5000,Woods Cross,None,kg,False
+100066,Garlic Powder (Organic),Ingredients,50,15.0000,Woods Cross,None,kg,False
+100152,Ginger Essential Oil,Ingredients,50,8.0000,Woods Cross,None,oz,False
+100151,Ginger Root Powder Organic,Ingredients,50,10.0000,Woods Cross,None,kg,False
+100215,"Ginkgo Leaf Powder C/S, Organic",Ingredients,50,0.5000,Woods Cross,None,kg,False
+100239,Ginseng Root Powder Chinese White,Ingredients,50,0.5000,Woods Cross,None,kg,False
+NP GJP-R,"Grape Juice Powder ""R""",Ingredients,50,1.0000,Woods Cross,None,kg,False
+738,Grape Juice Powder (organic),Ingredients,50,10.0000,Woods Cross,None,kg,False
+100147,Grapeseed Extract Organic,Ingredients,50,25.0000,Woods Cross,None,kg,False
+100018,"Green Papaya Powder, Organic ",Ingredients,50,0.0000,Woods Cross,None,kg,False
+100130,Hawthorn Berry Powder Organic,Ingredients,50,0.0000,Woods Cross,None,lb,False
+100057,"Hibiscus Flower Powder, Organic & Kosher",Ingredients,50,15.0000,Woods Cross,None,kg,False
+100037,Honey Granules Organic,Ingredients,50,0.9070,Woods Cross,None,kg,False
+100156,Honey Powder Organic,Ingredients,50,0.0000,Woods Cross,None,kg,False
+100061,"Hops Raw Flower Powder, Organic",Ingredients,50,0.5000,Woods Cross,None,kg,False
+100129,Horny Goat Weed Powder Organic/ Epimedium,Ingredients,50,0.5000,Woods Cross,None,ea,False
+100157,"ImmuFalseSEB Powder, Kosher",Ingredients,50,20.0000,Woods Cross,None,kg,False
+100038,Inulin Powder Raw Bulk / Organic - Kosher (Jerusalem Artichoke),Ingredients,50,100.0000,Woods Cross,None,kg,False
+100039,"Kale Powder, Organic and Kosher",Ingredients,50,20.0000,Woods Cross,None,kg,False
+100216,"Kava Kava Root Powder, Wildcrafted",Ingredients,50,0.0000,Woods Cross,None,kg,False
+100244,"Kelp Powder, Organic - Raw 25kg",Ingredients,50,50.0000,Woods Cross,None,kg,False
+100159,L-Alanine Powder,Ingredients,50,0.0000,Woods Cross,None,kg,False
+100016,L-Arginine Base Powder 20kg,Ingredients,50,25.0000,Woods Cross,None,kg,False
+100160,L-Carnitine Base Powder,Ingredients,50,0.0000,Woods Cross,None,kg,False
+100125,L-Carnitine Tartrate,Ingredients,50,25.0000,Woods Cross,None,kg,False
+100255,L-Citrulline DL-Malate 2:1,Ingredients,50,0.0000,Woods Cross,None,kg,False
+100035,Lecithin Powder,Ingredients,50,0.0000,Woods Cross,None,kg,False
+100229,"Lemon Balm Powder, Organic",Ingredients,50,0.4500,Woods Cross,None,kg,False
+100345,Lemon Essential Oil Organic - Gallon,Ingredients,50,32.0000,Woods Cross,None,oz,False
+100213,"Lemon Essential Oil, Organic",Ingredients,50,8.0000,Woods Cross,None,oz,False
+100257,Lemon Juice,Ingredients,50,32.0000,Woods Cross,None,kg,False
+100136,"Lemon Juice Powder, Organic",Ingredients,50,25.0000,Woods Cross,None,kg,False
+100134,Lemon Peel Powder,Ingredients,50,25.0000,Woods Cross,None,kg,False
+100034,"Lemon Powder, Organic & Kosher - 50LB Box",Ingredients,50,25.0000,Woods Cross,None,lb,False
+Lemon-Powder-Test,"Lemon Powder, Organic & Kosher - 50LB Box - TEST",Ingredients,50,25.0000,Woods Cross,None,lb,False
+100161,L-Glutamine FCC (25kg drum),Ingredients,50,25.0000,Woods Cross,None,kg,False
+100166,Licorice Root Powder Organic,Ingredients,50,0.0000,Woods Cross,None,kg,False
+100165,Lime Essential Oil Organic,Ingredients,50,8.0000,Woods Cross,None,oz,False
+100033,Lime Peel Powder,Ingredients,50,25.0000,Woods Cross,None,kg,False
+100326,Liposomal PureWay-C,Ingredients,50,25.0000,Woods Cross,None,kg,False
+100162,L-Isoleucine (25kg drum),Ingredients,50,0.0000,Woods Cross,None,kg,False
+100222,L-Lysine HCI Powder,Ingredients,50,75.0000,Woods Cross,None,kg,False
+100158,L-Theanine Powder,Ingredients,50,0.0000,Woods Cross,None,kg,False
+100254,L-Valine,Ingredients,50,0.0000,Woods Cross,None,kg,False
+100168,Maca Black Root Gelatinized Powder Organic Certified (USDA-FalseP),Ingredients,50,25.0000,Woods Cross,None,kg,False
+100167,Maca Red Root Gelantinized Powder Organic Certified (USDA-FalseP),Ingredients,50,25.0000,Woods Cross,None,kg,False
+100169,Maca Root Gelantinized Powder Organic Certified (USDA-FalseP),Ingredients,50,25.0000,Woods Cross,None,kg,False
+100009,Maca Root Powder - Yellow (organic) kg (Gelatinized),Ingredients,50,0.0000,Woods Cross,None,kg,False
+100171,Magnesium Citrate Powder (25kg bag),Ingredients,50,25.0000,Woods Cross,None,kg,False
+100040,"Magnesium Powder, Kosher - Organic Compliant",Ingredients,50,0.0000,Woods Cross,None,kg,False
+100344,Matcha Tea Powder Ceremonial Grade Organic,Ingredients,50,0.0000,Woods Cross,None,kg,False
+100172,Milk Thistle Powder organic,Ingredients,50,25.0000,Woods Cross,None,kg,False
+100170,Monk Fruit Juice Concentrate,Ingredients,50,0.0000,Woods Cross,None,kg,False
+100175,Moringa Leaf Powder Organic,Ingredients,50,25.0000,Woods Cross,None,kg,False
+100173,MSM Powder,Ingredients,50,0.0000,Woods Cross,None,kg,False
+100176,N-Acetyl-Cysteine,Ingredients,50,0.0000,Woods Cross,None,kg,False
+100015,Nattokinase Powder,Ingredients,50,40.0000,Woods Cross,None,kg,False
+100177,Nettle Leaf Powder Organic,Ingredients,50,0.5000,Woods Cross,None,kg,False
+100117,Nettle Root Powder Organic,Ingredients,50,0.5000,Woods Cross,None,kg,False
+100032,"Orange Peel Powder, Organic",Ingredients,50,25.0000,Woods Cross,None,kg,False
+100060,"OregaFalse Leaf Powder, Organic",Ingredients,50,0.4500,Woods Cross,None,kg,False
+100088,Organic Artichoke Leaf Powder,Ingredients,50,25.0000,Woods Cross,None,kg,False
+100335,Organic Baobab Powder,Ingredients,50,0.5000,Woods Cross,None,kg,False
+100361,Organic Beef Broth,Ingredients,50,50.0000,Woods Cross,None,kg,False
+100308,Organic Chaga whle mushroom,Ingredients,50,15.0000,Woods Cross,None,kg,False
+100225,Organic Coleus Forskohli Root Powder,Ingredients,50,0.0000,Woods Cross,None,kg,False
+100120,Organic D-ManFalsese Powder,Ingredients,50,25.0000,Woods Cross,None,kg,False
+100228,Organic Green Olive Leaf Powder,Ingredients,50,15.0000,Woods Cross,None,kg,False
+100309,Organic Lion's Mane whole mushroom,Ingredients,50,15.0000,Woods Cross,None,kg,False
+100311,Organic Maitake Mushroom Powder,Ingredients,50,15.0000,Woods Cross,None,kg,False
+100306,Organic Maitake whole mushroom >20% B-glucan - OrMi-M,Ingredients,50,0.0000,Woods Cross,None,kg,False
+100322,Organic Pumpkin Powder,Ingredients,50,15.0000,Woods Cross,None,kg,False
+100312,Organic Reishi Mushroom Powder,Ingredients,50,15.0000,Woods Cross,None,kg,False
+100307,Organic Reishi whole mushroom >20% B-glucan - OrMi-R,Ingredients,50,0.0000,Woods Cross,None,kg,False
+100363,Organic Uva Ursi Powder,Ingredients,50,15.0000,Woods Cross,None,Item,False
+100179,Papaya Powder organic,Ingredients,50,60.0000,Woods Cross,None,kg,False
+100181,Parsley Powder Organic,Ingredients,50,15.0000,Woods Cross,None,kg,False
+100062,"Passion Flower Herb Powder, Organic & Kosher",Ingredients,50,25.0000,Woods Cross,None,kg,False
+100267,Pepper Black - Ground,Ingredients,50,0.0000,Woods Cross,None,kg,False
+100182,Peppermint Leaf Powder organic,Ingredients,50,10.0000,Woods Cross,None,kg,False
+100115,Peppermint Oil Organic,Ingredients,50,8.0000,Woods Cross,None,oz,False
+100101,Phyllanthus Niruri Powder Organic,Ingredients,50,0.0000,Woods Cross,None,kg,False
+100112,"Pineapple Powder, Organic",Ingredients,50,10.0000,Woods Cross,None,kg,False
+100268,Potassium Bicarbonate,Ingredients,50,0.0000,Woods Cross,None,kg,False
+100075,Potassium Citrate,Ingredients,50,40.0000,Woods Cross,None,lb,False
+100186,Potassium Gluconate USP,Ingredients,50,0.0000,Woods Cross,None,kg,False
+100190,Potassium Sorbate Granular,Ingredients,50,0.0000,Woods Cross,None,kg,False
+100187,Psyllium Husk Powder Organic,Ingredients,50,25.0000,Woods Cross,None,kg,False
+100188,Psyllium Husks Powder Conventional,Ingredients,50,0.0000,Woods Cross,None,kg,False
+100180,Purple Corn Powder organic,Ingredients,50,2.0000,Woods Cross,None,kg,False
+100121,"Purple Sweet Potato, Organic compliant",Ingredients,50,0.0000,Woods Cross,None,kg,False
+100178,Pyridoxine (B6) HCL Powder (25kg Carton),Ingredients,50,0.0000,Woods Cross,None,kg,False
+100194,Raspberry Powder Organic,Ingredients,50,10.0000,Woods Cross,None,kg,False
+100192,Red Cabbage Powder #2,Ingredients,50,1.0000,Woods Cross,None,kg,False
+100195,Riboflavin (Vitamin B2) USP,Ingredients,50,0.0000,Woods Cross,None,kg,False
+100310,Ribus Nu-Bind,Ingredients,50,0.0000,Woods Cross,None,kg,False
+100183,Rosemary Leaf Powder Organic,Ingredients,50,0.4500,Woods Cross,None,kg,False
+100116,Rosemary Oil Organic,Ingredients,50,8.0000,Woods Cross,None,oz,False
+100250,"Rosemary Powder, Organic",Ingredients,50,0.4500,Woods Cross,None,kg,False
+100059,"Senna leaf Powder, Organic",Ingredients,50,0.5000,Woods Cross,None,kg,False
+100196,Sodium Benzoate Powder (25 kg bag),Ingredients,50,0.0000,Woods Cross,None,kg,False
+100143,"Spearmint Essential Oil, Organic",Ingredients,50,8.0000,Woods Cross,None,oz,False
+100197,Spinach Powder Organic,Ingredients,50,15.0000,Woods Cross,None,kg,False
+100198,"Spirulina Powder, Organic",Ingredients,50,25.0000,Woods Cross,None,kg,False
+100214,"St. John's Wort Herb Powder, Organic",Ingredients,50,0.0000,Woods Cross,None,kg,False
+100056,"Stevia Extract Powder, Organic",Ingredients,50,18.0000,Woods Cross,None,kg,False
+100191,Supra Red Powder,Ingredients,50,0.0000,Woods Cross,None,kg,False
+100090,Sweet Agave Powder 20kg bag organic,Ingredients,50,0.0000,Woods Cross,None,kg,False
+100224,Tart Cherry Concentrate - Red 52 gal Drum,Ingredients,50,52.0000,Woods Cross,None,gallon,False
+100107,Tart Cherry Powder organic,Ingredients,50,10.0000,Woods Cross,None,kg,False
+100243,Taurine Powder,Ingredients,50,0.0000,Woods Cross,None,kg,False
+100237,Thiamine Hydrochloride,Ingredients,50,0.0000,Woods Cross,None,kg,False
+100131,Tribulus Fruit Powder Organic,Ingredients,50,0.0000,Woods Cross,None,lb,False
+100305,Tricalcium Citrate,Ingredients,50,0.0000,Woods Cross,None,kg,False
+100067,Turmeric Powder (Organic),Ingredients,50,25.0000,Woods Cross,None,kg,False
+100153,USP Vegetable Glycerin,Ingredients,50,0.0000,Woods Cross,None,gallon,False
+100133,Valerian Root Powder,Ingredients,50,0.5000,Woods Cross,None,kg,False
+100240,Vanilla Extract Powder Organic,Ingredients,50,0.0000,Woods Cross,None,kg,False
+100324,"Vanilla Extract, Organic",Ingredients,50,0.0000,Woods Cross,None,gallon,False
+100135,Vitamin C Powder - Pureway-C,Ingredients,50,25.0000,Woods Cross,None,kg,False
+100248,"Wheat Grass Powder, Organic",Ingredients,50,10.0000,Woods Cross,None,kg,False
+100142,"White Whillow Bark Powder, Organic",Ingredients,50,0.5000,Woods Cross,None,kg,False
+100144,"White Willow Bark Powder, Organic",Ingredients,50,0.5000,Woods Cross,None,oz,False
+100155,Wild Honey 60#,Ingredients,50,0.0000,Woods Cross,None,kg,False
+100241,Yarrow Flower Powder Organic,Ingredients,50,0.5000,Woods Cross,None,kg,False
+100223,Zinc Gluconate,Ingredients,50,0.0000,Woods Cross,None,kg,False
+OL28WX,"0.75"" x 1"" - Standard White Matte Labels - 90 0 per sheet - 8.5 x 11"" Sheet",Labels ,50,0.0000,Woods Cross,None,ea,False
+100642,10.25 x 22.5 round corner label - 16oz GLASS Acid,Labels ,50,0.0000,Woods Cross,None,ea,False
+100648,10.25 x 22.5 round corner label - 16oz GLASS Chanca,Labels ,50,0.0000,Woods Cross,None,ea,False
+100649,10.25 x 22.5 round corner label - 16oz GLASS GBC,Labels ,50,0.0000,Woods Cross,None,ea,False
+100643,10.25 x 22.5 round corner label - 16oz GLASS Joint,Labels ,50,0.0000,Woods Cross,None,ea,False
+100650,10.25 x 22.5 round corner label - 16oz GLASS KC,Labels ,50,0.0000,Woods Cross,None,ea,False
+100651,10.25 x 22.5 round corner label - 16oz GLASS LC,Labels ,50,0.0000,Woods Cross,None,ea,False
+100645,10.25 x 22.5 round corner label - 16oz GLASS Leg,Labels ,50,0.0000,Woods Cross,None,ea,False
+100652,10.25 x 22.5 round corner label - 16oz GLASS Prostate,Labels ,50,0.0000,Woods Cross,None,ea,False
+100644,10.25 x 22.5 round corner label - 16oz GLASS UAC,Labels ,50,0.0000,Woods Cross,None,ea,False
+100653,10.25 x 22.5 round corner label - 16oz GLASS UTC,Labels ,50,0.0000,Woods Cross,None,ea,False
+100665,2.25 x 11 Round corner label - Beet Powder,Labels ,50,0.0000,Woods Cross,None,ea,False
+100263,2.25 x 11 Round corner label - Brighter Shine Amazon,Labels ,50,0.0000,Woods Cross,None,ea,False
+100256,2.25 x 11 Round corner label - Brighter Shine CNP,Labels ,50,0.0000,Woods Cross,None,ea,False
+100275,2.25 x 11 Round corner label - Inulin Amazon,Labels ,50,0.0000,Woods Cross,None,ea,False
+100670,2.25 x 11 Round corner label - Olive leaf,Labels ,50,0.0000,Woods Cross,None,ea,False
+100078,"2.25 x 11 Round corner rectangle Label - White Poly Fasson - 3""Core - 275 per Roll",Labels ,50,0.0000,Woods Cross,None,ea,False
+100052,2.25 x 6.75 Matte PolTrueter Label / 500 per roll,Labels ,50,0.0000,Woods Cross,None,ea,False
+100603,2.25 x 6.75 round corner label - acv capsule,Labels ,50,0.0000,Woods Cross,None,ea,False
+100611,2.25 x 6.75 round corner label - alfalfa capsule,Labels ,50,0.0000,Woods Cross,None,ea,False
+100612,2.25 x 6.75 round corner label - ashwaghanda capsule,Labels ,50,0.0000,Woods Cross,None,ea,False
+100605,2.25 x 6.75 round corner label - Beet root capsule,Labels ,50,0.0000,Woods Cross,None,ea,False
+100664,2.25 x 6.75 round corner label - Black Maca capsule,Labels ,50,0.0000,Woods Cross,None,ea,False
+100615,2.25 x 6.75 round corner label - can/d-man capsule,Labels ,50,0.0000,Woods Cross,None,ea,False
+100369,2.25 x 6.75 round corner label - Chanca capsule,Labels ,50,0.0000,Woods Cross,None,ea,False
+100368,2.25 x 6.75 round corner label - Chlorella capsule,Labels ,50,0.0000,Woods Cross,None,ea,False
+100604,2.25 x 6.75 round corner label - cranberry capsule,Labels ,50,0.0000,Woods Cross,None,ea,False
+100606,2.25 x 6.75 round corner label - dandelion capsule,Labels ,50,0.0000,Woods Cross,None,ea,False
+100614,2.25 x 6.75 round corner label - digestive enzyme capsule,Labels ,50,0.0000,Woods Cross,None,ea,False
+100602,2.25 x 6.75 round corner label - d-manFalsese capsule,Labels ,50,0.0000,Woods Cross,None,ea,False
+100657,2.25 x 6.75 round corner label - Elderberry,Labels ,50,0.0000,Woods Cross,None,ea,False
+100372,2.25 x 6.75 round corner label - Garlic capsule,Labels ,50,0.0000,Woods Cross,None,ea,False
+100662,2.25 x 6.75 round corner label - Garlic capsule,Labels ,50,0.0000,Woods Cross,None,ea,False
+100613,2.25 x 6.75 round corner label - grape seed capsule,Labels ,50,0.0000,Woods Cross,None,ea,False
+100659,2.25 x 6.75 round corner label - Hibiscus capsule,Labels ,50,0.0000,Woods Cross,None,ea,False
+100663,2.25 x 6.75 round corner label - Inulin capsule,Labels ,50,0.0000,Woods Cross,None,ea,False
+100607,2.25 x 6.75 round corner label - kelp capsule,Labels ,50,0.0000,Woods Cross,None,ea,False
+100609,2.25 x 6.75 round corner label - maca capsule,Labels ,50,0.0000,Woods Cross,None,ea,False
+100658,2.25 x 6.75 round corner label - Milk Thistle capsule,Labels ,50,0.0000,Woods Cross,None,ea,False
+100610,2.25 x 6.75 round corner label - nattokinase capsule,Labels ,50,0.0000,Woods Cross,None,ea,False
+100654,2.25 x 6.75 round corner label - nattokinase capsule,Labels ,50,0.0000,Woods Cross,None,ea,False
+100601,2.25 x 6.75 round corner label - papaya capsule,Labels ,50,0.0000,Woods Cross,None,ea,False
+100660,2.25 x 6.75 round corner label - Psyllium husk capsule,Labels ,50,0.0000,Woods Cross,None,ea,False
+100608,2.25 x 6.75 round corner label - red maca capsule,Labels ,50,0.0000,Woods Cross,None,ea,False
+100655,2.25 x 6.75 round corner label - Red maca capsule,Labels ,50,0.0000,Woods Cross,None,ea,False
+100351,2.25 x 6.75 round corner label - Spirulina capsule,Labels ,50,0.0000,Woods Cross,None,ea,False
+100370,2.25 x 6.75 round corner label - Turmeric capsule,Labels ,50,0.0000,Woods Cross,None,ea,False
+100661,2.25 x 6.75 round corner label - Vitamin C capsule,Labels ,50,0.0000,Woods Cross,None,ea,False
+100617,2.5 x 5.5 round corner label - 4oz d-manFalsese,Labels ,50,0.0000,Woods Cross,None,ea,False
+100204,2.5 x 5.5 Round Corner Rectangle - White PolTrueter Fasson 79348,Labels ,50,0.0000,Woods Cross,None,ea,False
+OL875WX,"2.625"" X 1"" / 30 Labels per sheet (8-1/2"" x 11""sheet) Standard Matte",Labels ,50,0.0000,Woods Cross,None,ea,False
+OL875CJ,"2.625"" x 1"" / 8.5"" x 11 Clear Matte Labels - 30 labels per sheet",Labels ,50,0.0000,Woods Cross,None,ea,False
+100011,"2.75"" x 6.5"" White PolTrueter Matte Label",Labels ,50,0.0000,Woods Cross,None,ea,False
+100616,3 x 11 round corner label - 10oz d-manFalsese,Labels ,50,0.0000,Woods Cross,None,ea,False
+100347,3 x 11 round corner label - 10oz organic d-manFalsese,Labels ,50,0.0000,Woods Cross,None,ea,False
+100656,3 x 11 round corner label - Inulin,Labels ,50,0.0000,Woods Cross,None,ea,False
+100631,3 x 7 round corner label - 8oz Acid,Labels ,50,0.0000,Woods Cross,None,ea,False
+100632,3 x 7 round corner label - 8oz Chanca,Labels ,50,0.0000,Woods Cross,None,ea,False
+100628,3 x 7 round corner label - 8oz GBC,Labels ,50,0.0000,Woods Cross,None,ea,False
+100646,3 x 7 round corner label - 8oz KC,Labels ,50,0.0000,Woods Cross,None,ea,False
+100633,3 x 7 round corner label - 8oz Liver,Labels ,50,0.0000,Woods Cross,None,ea,False
+100629,3 x 7 round corner label - 8oz UAC,Labels ,50,0.0000,Woods Cross,None,ea,False
+100630,3 x 7 round corner label - 8oz UTC,Labels ,50,0.0000,Woods Cross,None,ea,False
+100618,3 x 7 round corner label - Vintage GBC,Labels ,50,0.0000,Woods Cross,None,ea,False
+100620,3 x 7 round corner label - Vintage LC,Labels ,50,0.0000,Woods Cross,None,ea,False
+100619,3 x 7 round corner label - Vintage UTC,Labels ,50,0.0000,Woods Cross,None,ea,False
+100203,"3"" x 11"" Round Corner Rectagle - PR 5 x 7 5124359 White PolTrueter Fasson 79348",Labels ,50,0.0000,Woods Cross,None,ea,False
+100054,"3"" x 7"" Round Corner Rectangle - White 5m Matte PolTrueter Label / 500 per roll",Labels ,50,0.0000,Woods Cross,None,ea,False
+100053,"3.25"" x 8"" White Matte PolTrueter Label / 275 per roll / Custom",Labels ,50,0.0000,Woods Cross,None,ea,False
+100325,"3.5"" x 8"" Round Corner Rectangle",Labels ,50,0.0000,Woods Cross,None,ea,False
+100624,3.75 x 7 round corner label - 12oz Acid,Labels ,50,0.0000,Woods Cross,None,ea,False
+100623,3.75 x 7 round corner label - 12oz Chanca,Labels ,50,0.0000,Woods Cross,None,ea,False
+100621,3.75 x 7 round corner label - 12oz GBC,Labels ,50,0.0000,Woods Cross,None,ea,False
+100627,3.75 x 7 round corner label - 12oz KC,Labels ,50,0.0000,Woods Cross,None,ea,False
+100626,3.75 x 7 round corner label - 12oz Liver,Labels ,50,0.0000,Woods Cross,None,ea,False
+100622,3.75 x 7 round corner label - 12oz UAC,Labels ,50,0.0000,Woods Cross,None,ea,False
+100625,3.75 x 7 round corner label - 12oz UTC,Labels ,50,0.0000,Woods Cross,None,ea,False
+100230,"3.75"" x 7"" Round Corder Label White PolTrueter Fasson 79348",Labels ,50,0.0000,Woods Cross,None,ea,False
+RL785DT,"4"" x 6"" Thermal Roll Labels - 1"" Core / 4"" Outer Diameter",Labels ,50,0.0000,Woods Cross,None,ea,False
+100252,5 x 7 round corner label - 16oz Acid Reflux,Labels ,50,0.0000,Woods Cross,None,ea,False
+100638,5 x 7 round corner label - 16oz Chanca,Labels ,50,0.0000,Woods Cross,None,ea,False
+100639,5 x 7 round corner label - 16oz GBC,Labels ,50,0.0000,Woods Cross,None,ea,False
+100635,5 x 7 round corner label - 16oz Joint,Labels ,50,0.0000,Woods Cross,None,ea,False
+100634,5 x 7 round corner label - 16oz KC,Labels ,50,0.0000,Woods Cross,None,ea,False
+100636,5 x 7 round corner label - 16oz LC,Labels ,50,0.0000,Woods Cross,None,ea,False
+100641,5 x 7 round corner label - 16oz Leg,Labels ,50,0.0000,Woods Cross,None,ea,False
+100637,5 x 7 round corner label - 16oz UAC,Labels ,50,0.0000,Woods Cross,None,ea,False
+100640,5 x 7 round corner label - 16oz UTC,Labels ,50,0.0000,Woods Cross,None,ea,False
+100077,"5 x 7 Round Corner, White PolTrueter, 3""Core, 275 per roll - PR5x7",Labels ,50,0.0000,Woods Cross,None,ea,False
+409803V1,Goodye UTI label - 2x5.25 White Film Digital,Labels ,50,0.0000,Woods Cross,None,ea,False
+100047,"RC - 30 Labels / Sheet - 2.625"" x 1"" - Clear Matte For Inkjet 100QT",Labels ,50,0.0000,Woods Cross,None,ea,False
+900500,Standard White Thermal Zebra label 4 x 6,Labels ,50,0.0000,Woods Cross,None,ea,False
+100266,Tart Cherry Shrink Sleeve 12oz,Labels ,50,0.0000,Woods Cross,None,ea,False
+100337,Tart Cherry Shrink Sleeve 16oz,Labels ,50,0.0000,Woods Cross,None,ea,False
+100262,24-400 Black Ribbed skirt foam liner HIS,Lids,50,0.0000,Woods Cross,None,ea,False
+100260,24-410 WHT HS035.020 R SFYP Foam,Lids,50,0.0000,Woods Cross,None,ea,False
+100242,28-410 Black Screw Cap Part#L166,Lids,50,0.0000,Woods Cross,None,ea,False
+100043,38-400 White Ribbed Smooth LID (HIS Lined),Lids,50,0.0000,Woods Cross,None,ea,False
+100265,38mm Black 38DBJ22 Dairy Lid,Lids,50,0.0000,Woods Cross,None,ea,False
+100245,38mm Black Child proof lid,Lids,50,0.0000,Woods Cross,None,ea,False
+100251,45-400 Black CRC Lid C25 Foam Printed,Lids,50,0.0000,Woods Cross,None,ea,False
+100261,45mm white wide mouth,Lids,50,0.0000,Woods Cross,None,ea,False
+100253,5 Gallon Bucket Lid,Lids,50,0.0000,Woods Cross,None,ea,False
+100332,70-400 Smooth Skirt Lid HIS liner BLACK,Lids,50,0.0000,Woods Cross,None,ea,False
+L2480,89-400 Black Smooth Lid FS5-4 / S70 Printed Liner,Lids,50,0.0000,Woods Cross,None,ea,False
+L532,89mm HIS Liner for PET & PVC,Lids,50,0.0000,Woods Cross,None,ea,False
+L4175BKH64,Black PP Plastic 89-400 Smooth Skirt Lid w/ (HIS) Liner,Lids,50,0.0000,Woods Cross,None,ea,False
+L251B,Black PP Plastic 89-400 smooth Skirt Unlined Lid,Lids,50,0.0000,Woods Cross,None,ea,False
+100210,Capsule Glass Lid - Black Ribbed edge/ Smooth top Lid 45-400 HIS Lined,Lids,50,0.0000,Woods Cross,None,ea,False
+100073,"Capsule Glass Lid, Black 45-400 Smooth w/HIS liner",Lids,50,0.0000,Woods Cross,None,ea,False
+100800,"Capsule Glass Lid, Black 45-400 Smooth w/HIS liner/L13671BKH149 Substitute",Lids,50,0.0000,Woods Cross,None,ea,False
+100209,L252HI - Black PP Plastic 89-400 Smooth Skirt Lid w/ 2-Pc HIS Liner,Lids,50,2950.0000,Woods Cross,None,ea,False
+100137,"Lid, White for Gallon Jug / HIS Lid",Lids,50,0.0000,Woods Cross,None,ea,False
+100810,"Lids, 24-410 Black Ribbed Skirt, Matte top, w/HIS seal part#L475BKH5",Lids,50,12000.0000,Woods Cross,None,ea,False
+100082,"Lids, 24-410 Black Ribbed Skirt, Matte top, w/lift-N-peel U5 LP-T & 0.35 PE Foam Liner",Lids,50,12000.0000,Woods Cross,None,ea,False
+L817,Natural-Colored PP Plastic 70-400 smooth skirt lid w/HIS Liner,Lids,50,0.0000,Woods Cross,None,ea,False
+100185,"White PP Plastic 38-400 smooth skirt lid, tri-foil foam liner w/HIS liner #L192WHH75-SG",Lids,50,0.0000,Woods Cross,None,ea,False
+100259,White PP Plastic 70-400 smooth skirt lid w/HIS Liner,Lids,50,0.0000,Woods Cross,None,ea,False
+100232,White Ribbed/smooth Lid 28-410 HIS,Lids,50,0.0000,Woods Cross,None,ea,False
+P-21,Gallbladder & Liver Cleanse,Liquid,50,0.0000,Woods Cross,None,Item,True
+122755,"#0 White Poly Bubble Mailer 6-1/2"" x 9-1/4"" - 250 Case",Packaging,50,2.0000,Woods Cross,None,ea,False
+100348,1/4 x 48 x 225' PE Foam S12 p12,Packaging,50,0.0000,Woods Cross,None,bundle,False
+100083,"15"" x 1650' /x-Fill Paper 30# - 60 bundles per Pallet",Packaging,50,0.0000,Woods Cross,None,ea,False
+100058,"15"" x 1650' Paper-XFill 30# 60 Bundles / Pallet",Packaging,50,0.0000,Woods Cross,None,ea,False
+100219,18 x 1500 80 gauge Uline pallet Wrap 4 rolls per-cs S-2190,Packaging,50,0.0000,Woods Cross,None,ea,False
+100226,2 x 110 2.6 MIL Clear Carton Seal TAPE,Packaging,50,0.0000,Woods Cross,None,ea,False
+100546,4 x 7.5 Self-Seal Bubble pouch,Packaging,50,0.0000,Woods Cross,None,ea,False
+100048,5 x 7 1.5 mil bags Suffocation warn bag #22302,Packaging,50,1000.0000,Woods Cross,None,ea,False
+S-14761,"5 x 8"" Self-Seal Bubble Bags 450/carton",Packaging,50,0.0000,Woods Cross,None,ea,False
+S-2836,7 x 10 - 2mil Reclosable Bag 1000 ct,Packaging,50,0.0000,Woods Cross,None,box,False
+S-22805,7 x 10 1.5 mil bags,Packaging,50,0.0000,Woods Cross,None,ea,False
+100457,7 x 8.5 Bubble Bag self-seal 550/cs,Packaging,50,0.0000,Woods Cross,None,ea,False
+128874,Bubble Wrap 4pack Bundle 48x1/2x250 Lite B,Packaging,50,0.0000,Woods Cross,None,ea,False
+100218,Cub Kraft Paper Shopping Bag 250/ct,Packaging,50,0.0000,Woods Cross,None,ea,False
+100323,"Foam Roll - 1/4"" - 12""x 250'",Packaging,50,0.0000,Woods Cross,None,ea,False
+125919,Loose Fill Ecoflo Packing Peanuts #12 cu ft Tan Corn Bag,Packaging,50,0.0000,Woods Cross,None,ea,False
+100681,Oxygen-Absorbing Packets 30cc,Packaging,50,0.0000,Woods Cross,None,ea,False
+100140,R12 / 9 x 9 x 9 Box / Bundle of 25,Packaging,50,0.0000,Woods Cross,None,ea,False
+100027,R120 / 5 x 5 x 10 Box / Bundle of 25,Packaging,50,0.0000,Woods Cross,None,ea,False
+39200,R120 / 5 x 5 x 10 Box / Pallet of 1500,Packaging,50,0.0000,Woods Cross,None,ea,False
+100138,R128 / 9 x 5 x 5 Box / Bundle of 25,Packaging,50,0.0000,Woods Cross,None,ea,False
+39300,R128 / 9 x 5 x 5 Box / Pallet of 2000,Packaging,50,0.0000,Woods Cross,None,ea,False
+100360,R134 12x9x7 Box - Bundle of 25,Packaging,50,0.0000,Woods Cross,None,ea,False
+100139,R17 / 10 x 10 x 10 Box / Bundle of 25,Packaging,50,0.0000,Woods Cross,None,ea,False
+100141,R195 / 14 x 10 x 8 Box / Bundle of 25,Packaging,50,0.0000,Woods Cross,None,ea,False
+100291,R204 / 16x10x6 Box / Bundle of 25,Packaging,50,0.0000,Woods Cross,None,ea,False
+100079,R205 / 16 x 10 x 8 / Bundle of 25,Packaging,50,0.0000,Woods Cross,None,ea,False
+100860,R206 / 16 x 12x 12 Box / Bundle of 25,Packaging,50,0.0000,Woods Cross,None,ea,False
+100028,R344 / 9 x 7 x 7 Box / Bundle of 25,Packaging,50,0.0000,Woods Cross,None,ea,False
+100029,R346 / 9 x 9 x 7 Box / Bundle of 25,Packaging,50,0.0000,Woods Cross,None,ea,False
+100189,R453 / 18x14x12 Box / Bundle of 25,Packaging,50,0.0000,Woods Cross,None,ea,False
+100339,R517 16x12x6 Box - Bundle of 25,Packaging,50,0.0000,Woods Cross,None,ea,False
+100030,R518 / 16 x 12 x 8 Box / Bundle of 25,Packaging,50,0.0000,Woods Cross,None,ea,False
+100031,R519 / 16 x 12 x 10 Box / Bundle of 25,Packaging,50,0.0000,Woods Cross,None,ea,False
+100341,R534 - 18x10x6 Boxes - bundle of 25,Packaging,50,0.0000,Woods Cross,None,ea,False
+100025,R6 / 6 x 6 x 6 Box / Bundle of 25,Packaging,50,0.0000,Woods Cross,None,ea,False
+100026,R68 / 8 x 5 x 5 Box / Bundle of 25,Packaging,50,0.0000,Woods Cross,None,ea,False
+39100,R68 / 8 x 5 x 5 Box / Pallet of 2000,Packaging,50,0.0000,Woods Cross,None,ea,False
+100338,R708 - 16x14x 8 boxes - Bundle of 25,Packaging,50,0.0000,Woods Cross,None,ea,False
+100246,R79 12x8x8 Box,Packaging,50,0.0000,Woods Cross,None,ea,False
+100247,R91 - 14 x 10 x 6 Box - Bundle of 25,Packaging,50,0.0000,Woods Cross,None,ea,False
+100081,R93 16x8x8 Boxes - Bundle of 25,Packaging,50,0.0000,Woods Cross,None,ea,False
+100340,R94 16x10x10 Boxes - Bundle of 25,Packaging,50,0.0000,Woods Cross,None,ea,False
+100206,"Reinforced Kraft Wet Tape 3"" x 450'",Packaging,50,0.0000,Woods Cross,None,ea,False
+S-18627,"Shrink Bands - Perforated, 100mm x 56mm 1,000/carton",Packaging,50,0.0000,Woods Cross,None,box,False
+100184,"Shrink Bands - Perforated, 55mm x 28mm, Perforated 1,000/carton",Packaging,50,0.0000,Woods Cross,None,box,False
+144947,Strech Wrap 18X1500,Packaging,50,0.0000,Woods Cross,None,ea,False
+100205,"Wet Tape 3"" X 375' White reinforced tape W7480 water activiated",Packaging,50,0.0000,Woods Cross,None,ea,False
+100051,White Poly #2 8-1/2 x 12 - 100 case,Packaging,50,0.0000,Woods Cross,None,ea,False
+13041,Anti Anxiety & Calming Superfood Powder,Powders,50,0.0000,Woods Cross,None,ea,True
+13011,Good Greens Superfood Powder,Powders,50,0.0000,Woods Cross,None,ea,True
+GBUTI DMAN 60g,Goodbye UTI 60 Grams of D-manFalsese,Powders,50,0.0000,Woods Cross,None,ea,True
+13021,Gut Greens,Powders,50,0.0000,Woods Cross,None,ea,True
+33000,Kelp Powder 8oz,Powders,50,0.0000,Woods Cross,None,ea,True
+13011-1,Organic & Kosher Greens Superfood Powder,Powders,50,0.0000,Woods Cross,None,ea,True
+32000,Organic Beet Root Powder Jar,Powders,50,0.0000,Woods Cross,None,ea,True
+35000,Organic Chanca Piedra Tea Powder,Powders,50,0.0000,Woods Cross,None,ea,True
+30002,Organic D-ManFalsese Powder,Powders,50,0.0000,Woods Cross,None,ea,True
+31000,Organic Inulin Powder Fiber Supplement,Powders,50,0.0000,Woods Cross,None,ea,True
+37000,Organic Psyllium Husk Powder,Powders,50,0.0000,Woods Cross,None,ea,True
+30000,Pure D-ManFalsese Powder Supplement - 10oz,Powders,50,0.0000,Woods Cross,None,ea,True
+30001,Pure D-ManFalsese Powder Supplement - 4oz,Powders,50,0.0000,Woods Cross,None,ea,True
+36000,Pure L-Arginine Powder Supplement,Powders,50,0.0000,Woods Cross,None,ea,True
+39000,Pure L-Carnitine Powder Supplement,Powders,50,0.0000,Woods Cross,None,ea,True
+38000,Pure L-Glutamine Powder Supplement,Powders,50,0.0000,Woods Cross,None,ea,True
+34000,Pure L-Lysine Powder Supplement,Powders,50,0.0000,Woods Cross,None,ea,True
+13002,Weight Management Superfood Greens,Powders,50,0.0000,Woods Cross,None,ea,True
+100202,1oz Medicine Cup with Lip - SKU 16-9505,Production,50,0.0000,Woods Cross,None,ea,False
+100233,2cc Scoops for 4oz Jar - 2MH,Production,50,2000.0000,Woods Cross,None,ea,False
+100070,4cc Scoop MH BLACK 2000/cs,Production,50,2000.0000,Woods Cross,None,ea,False
+100046,4cc Scoop NATURAL 5000/cs - MH,Production,50,2000.0000,Woods Cross,None,ea,False
+100227,5 Gallon Buckets,Production,50,0.0000,Woods Cross,None,ea,False
+S-5456,"5 x 10 1/2"" Bubble Bag",Production,50,0.0000,Woods Cross,None,ea,False
+S-5140,5 x 6 Bubble bag Self Seal,Production,50,0.0000,Woods Cross,None,ea,False
+100328,5 x 8 2mil Reclosable Bag 1M/CT,Production,50,0.0000,Woods Cross,None,ea,False
+100336,55 Gal Blue Open Head Poly w/ lid and Bung lids.,Production,50,0.0000,Woods Cross,None,ea,False
+100343,5x10.5 Bubble bags with Self Seal 250 per case,Production,50,0.0000,Woods Cross,None,ea,False
+100020,6000/6500 Maintenance Box,Production,50,0.0000,Woods Cross,None,ea,False
+100211,7.5cc Clear Scoop / Medium - 7.5MH,Production,50,2000.0000,Woods Cross,None,ea,False
+100220,Capsules #0 -,Production,50,0.0000,Woods Cross,None,box,False
+100300,Droplet-Fliltering Face Mask - Adult,Production,50,0.0000,Woods Cross,None,ea,False
+100299,N95 Face Mask,Production,50,0.0000,Woods Cross,None,ea,False
+100364,Primera - Black Ink Cartridge - LX1000/LX2000,Production,50,0.0000,Woods Cross,None,Item,False
+100358,Primera - Cyan Ink Cartridge - LX1000/LX2000,Production,50,0.0000,Woods Cross,None,ea,False
+100357,Primera - Magenta Ink Cartridge- LX1000/LX2000,Production,50,0.0000,Woods Cross,None,ea,False
+100356,Primera - Yellow Ink Cartridge - LX1000/LX2000,Production,50,0.0000,Woods Cross,None,ea,False
+100342,S-10547 S/S Bubble Bag 6x11.5 250ct,Production,50,0.0000,Woods Cross,None,ea,False
+P-11,Gallbladder & Liver Pet Tests strips,Testing,50,0.0000,Woods Cross,None,ea,True
+24000,Gallbladder & Liver Test,Testing,50,0.0000,Woods Cross,None,ea,True
+P-12,Kidney Pet Tests strips,Testing,50,0.0000,Woods Cross,None,ea,True
+100235,Leukocyte Colormetric Pad 5mm x 5mm,Testing,50,0.0000,Woods Cross,None,ea,False
+21001,"Rapid Test Complete � Urinalysis Test Strips 100ct UTI and pH Strips, with Label & Box 5mm",Testing,50,0.0000,Woods Cross,None,ea,True
+P-10,UTI Pet Tests strips,Testing,50,0.0000,Woods Cross,None,ea,True
+23000,"UTI Test Strips & Kit - UTI Testing Kit, 50 Count Test Strips for pH, Leukocytes, & Nitrites",Testing,50,0.0000,Woods Cross,None,ea,True

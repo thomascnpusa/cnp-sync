@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Fulfill Production Orders</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+        .excel-table { width: 100%; border-collapse: collapse; margin-bottom: 20px; }
+        .excel-table th, .excel-table td { border: 1px solid #ddd; padding: 8px; text-align: left; }
+        .excel-table th { background: #ecf0f1; }
+        .btn { padding: 5px 10px; }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <a href="/">Home</a>
+        <a href="/sync">Sync</a>
+        <a href="/inventory">Inventory</a>
+        <a href="/receive">Receive</a>
+        <a href="/produce">Produce</a>
+        <a href="/fulfill">Fulfill Orders</a>
+        <a href="/adjust">Adjust</a>
+        <a href="/sales">Sales</a>
+        <a href="/manual-sale">Manual Sale</a>
+        <a href="/history">Order History</a>
+    </div>
+    <div class="container">
+        <h1>Fulfill Production Orders</h1>
+        {% if orders %}
+            {% for order in orders %}
+                <h2>Order {{ order.order_id }} - {{ order.product.product_name }}</h2>
+                <p>Production Batch: {{ order.production_batch }}</p>
+                <p>Quantity to Produce: {{ order.quantity_to_produce }} {{ order.product.default_unit_of_measure }}</p>
+                <p>Date Submitted: {{ order.date_submitted }}</p>
+                <p>Status: {{ order.status }}{% if order.date_fulfilled %} (Fulfilled on {{ order.date_fulfilled }}) {% endif %}</p>
+                {% if order.notes %}
+                    <h3>Order Notes</h3>
+                    <p>{{ order.notes }}</p>
+                {% endif %}
+                {% if order.product.bom_finished %}
+                    <h3>Bill of Materials</h3>
+                    <table class="excel-table">
+                        <thead>
+                            <tr>
+                                <th>Component Product ID</th>
+                                <th>Component Name</th>
+                                <th>Quantity Required</th>
+                                <th>Batch Used</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for item in order.product.bom_finished %}
+                                {% set inv = item.product_component.bom_component_inventory|selectattr('location', 'equalto', 'Woods Cross')|first %}
+                                <tr>
+                                    <td>{{ item.component_product_id }}</td>
+                                    <td>{{ item.product_component.product_name }}</td>
+                                    <td>{{ (item.quantity * order.quantity_to_produce)|round(2) }} {{ item.product_component.default_unit_of_measure }}</td>
+                                    <td>{{ inv.batch_number if inv else 'N/A' }}</td>
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                {% else %}
+                    <p>No BOM items defined. <a href="{{ url_for('main.product_detail', product_id=order.product_id) }}">Add some here</a>.</p>
+                {% endif %}
+                {% if order.product.notes %}
+                    <h3>Product Notes</h3>
+                    <p>{{ order.product.notes }}</p>
+                {% endif %}
+                <h3>Production Steps</h3>
+                <ol>
+                    {% for step in steps %}
+                        <li>{{ step }}</li>
+                    {% endfor %}
+                </ol>
+                <form method="POST">
+                    {{ form.hidden_tag() }}
+                    {{ form.order_id(value=order.order_id, type="hidden") }}
+                    {{ form.submit(class="btn") }}
+                </form>
+                <hr>
+            {% endfor %}
+        {% else %}
+            <p>No pending production orders to fulfill.</p>
+        {% endif %}
+
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                <ul class="flashes">
+                    {% for category, message in messages %}
+                        <li class="{{ category }}">{{ message }}</li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        {% endwith %}
+    </div>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Submit Production Order</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+        .form-group { margin-bottom: 15px; }
+        .form-control { width: 100%; padding: 5px; }
+        .btn { padding: 5px 10px; }
+        .search-bar { margin-bottom: 20px; }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <a href="/">Home</a>
+        <a href="/sync">Sync</a>
+        <a href="/inventory">Inventory</a>
+        <a href="/receive">Receive</a>
+        <a href="/produce">Produce</a>
+        <a href="/fulfill">Fulfill Orders</a>
+        <a href="/adjust">Adjust</a>
+        <a href="/sales">Sales</a>
+        <a href="/manual-sale">Manual Sale</a>
+        <a href="/history">Order History</a>
+    </div>
+    <div class="container">
+        <h1>Submit Production Order</h1>
+        <form method="POST">
+            {{ form.hidden_tag() }}
+            <div class="form-group">
+                <label for="productSearch">{{ form.product.label }}</label>
+                <input type="text" id="productSearch" list="productList" name="product" class="form-control" placeholder="Search products..." required>
+                <datalist id="productList">
+                    {% for product in products %}
+                        <option value="{{ product.product_id }}">{{ product.product_name }} ({{ product.product_id }}) - {{ product.default_unit_of_measure }}</option>
+                    {% endfor %}
+                </datalist>
+                {% if form.product.errors %}
+                    <ul class="errors">
+                        {% for error in form.product.errors %}
+                            <li>{{ error }}</li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+            </div>
+            <div class="form-group">
+                <label>{{ form.quantity.label }}</label>
+                {{ form.quantity(class="form-control") }}
+            </div>
+            <div class="form-group">
+                <label>{{ form.notes.label }}</label>
+                {{ form.notes(class="form-control", rows="3") }}
+            </div>
+            {{ form.submit(class="btn", value="Submit Production Order") }}
+        </form>
+
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                <ul class="flashes">
+                    {% for category, message in messages %}
+                        <li class="{{ category }}">{{ message }}</li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        {% endwith %}
+    </div>
+</body>
+</html>
